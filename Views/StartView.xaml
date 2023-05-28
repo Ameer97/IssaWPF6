@@ -1,0 +1,67 @@
+﻿<UserControl x:Class="IssaWPF6.Views.StartView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:IssaWPF6.Views"
+             mc:Ignorable="d"
+             Background="White"
+             Height="350" Width="700">
+    <Grid>
+
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Button
+            x:Name="ColonButton"
+            Click="ColonButton_Click"
+            Content="Colon" 
+            Grid.Column="0"
+            Margin="25"
+            Background="#32BF84" 
+            Foreground="#FFFFFF"
+            BorderBrush="#DDD"
+            BorderThickness="6"
+            Opacity="0.85" 
+            FontSize="40"
+            FontFamily="Calibri"
+            FontWeight="Bold">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter 
+                        Property="CornerRadius" 
+                        Value="50"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+
+
+        <Button
+            x:Name="OGDButton"
+            Click="OGDButton_Click"
+            Content=" OGD " 
+            Grid.Column="1"
+            Margin="15 "
+            Background="#343837" 
+            Foreground="#FFFFFF"
+            BorderBrush="#DDD"
+            BorderThickness="6"
+            Opacity="0.85" 
+            FontSize="40"
+            FontWeight="Bold"
+            FontFamily="Arial">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter 
+                        Property="CornerRadius" 
+                        Value="50"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,73 @@
+﻿<UserControl x:Class="IssaWPF6.Views.ColonView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:IssaWPF6.Views"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d" 
+             Background="#FFFFFF"
+             Opacity="0.9"
+             BorderBrush="Transparent"
+             BorderThickness="4" 
+             Width="1000"
+             Height="480" KeyDown="UserControl_KeyDown">
+    <Grid>
+        <TextBox x:Name="Name" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="337" FontSize="12" Margin="126,37,0,0"/>
+        <TextBox x:Name="Age" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="337" FontSize="12" Margin="126,80,0,0" />
+
+        <!--<TextBox x:Name="Gender" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="440" FontSize="12" Margin="161,195,0,0"/>-->
+
+        <ComboBox x:Name="Gender" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Width="337" FontSize="12" Margin="126,121,0,0" />
+        <TextBox x:Name="FileNo" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="337" FontSize="12" Margin="126,172,0,0" />
+
+
+        <DatePicker x:Name="DateTimePicker1" HorizontalAlignment="Left"  Text="" VerticalAlignment="Top" Width="337" FontSize="12" Margin="126,212,0,0" SelectedDate="{x:Static sys:DateTime.Now}" />
+
+
+        <TextBox x:Name="Premedication" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="337" FontSize="12" Margin="126,255,0,0"/>
+
+        <ComboBox x:Name="Scope" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Width="337" FontSize="12" Margin="126,299,0,0" />
+
+        <TextBox x:Name="ReferredDoctor" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="337" FontSize="12" Margin="126,347,0,0"/>
+        <TextBox x:Name="ClinicalData" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="337" FontSize="12" Margin="126,390,0,0"/>
+
+        <ComboBox x:Name="Preparation" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Width="337" FontSize="12" Margin="126,431,0,0" />
+
+        <TextBox x:Name="AnalInspection" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="337" FontSize="12" Margin="610,37,0,0"/>
+        <TextBox x:Name="PRExam" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="358" FontSize="12" Margin="589,80,0,0"/>
+        <TextBox x:Name="Ileum" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="358" FontSize="12" Margin="589,123,0,0"/>
+        <TextBox x:Name="Colon" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="358" FontSize="12" Margin="589,172,0,0"/>
+        <TextBox x:Name="Rectum" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="358" FontSize="12" Margin="589,212,0,0"/>
+        <TextBox x:Name="Conclusion" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="358" FontSize="12" Margin="589,260,0,0"/>
+        <TextBox x:Name="Assistant" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="358" FontSize="12" Margin="589,307,0,0"/>
+        <TextBox x:Name="Endoscopist" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="358" FontSize="12" Margin="589,347,0,0"/>
+
+
+        <Label Content="Name" Width="151" FontSize="14" HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top"/>
+        <Label Content="Age" Width="151" FontSize="14" HorizontalAlignment="Left" Margin="10,75,0,0" VerticalAlignment="Top"/>
+        <Label Content="Gender" Width="151" FontSize="14" HorizontalAlignment="Left" Margin="10,117,0,0" VerticalAlignment="Top"/>
+        <Label Content="FileNo" Width="151" FontSize="14" HorizontalAlignment="Left" Margin="10,166,0,0" VerticalAlignment="Top"/>
+        <Label Content="ateTimePicker1" Width="151" FontSize="14" HorizontalAlignment="Left" Margin="10,208,0,0" VerticalAlignment="Top"/>
+        <Label Content="Premedication" Width="151" FontSize="14" HorizontalAlignment="Left" Margin="10,249,0,0" VerticalAlignment="Top"/>
+        <Label Content="Scope" Width="151" FontSize="14" HorizontalAlignment="Left" Margin="10,296,0,0" VerticalAlignment="Top"/>
+        <Label Content="ReferredDoctor" Width="151" FontSize="14" HorizontalAlignment="Left" Margin="10,343,0,0" VerticalAlignment="Top"/>
+        <Label Content="ClinicalData" Width="151" FontSize="14" HorizontalAlignment="Left" Margin="10,386,0,0" VerticalAlignment="Top"/>
+        <Label Content="Preparation" Width="151" FontSize="14" HorizontalAlignment="Left" Margin="10,429,0,0" VerticalAlignment="Top"/>
+        <Label Content="AnalInspection" Width="150" FontSize="14" HorizontalAlignment="Left" Margin="502,32,0,0" VerticalAlignment="Top"/>
+        <Label Content="PRExam" Width="150" FontSize="14" HorizontalAlignment="Left" Margin="502,75,0,0" VerticalAlignment="Top"/>
+        <Label Content="Ileum" Width="150" FontSize="14" HorizontalAlignment="Left" Margin="502,117,0,0" VerticalAlignment="Top"/>
+        <Label Content="Colon" Width="150" FontSize="14" HorizontalAlignment="Left" Margin="502,166,0,0" VerticalAlignment="Top"/>
+        <Label Content="Rectum" Width="150" FontSize="14" HorizontalAlignment="Left" Margin="502,208,0,0" VerticalAlignment="Top"/>
+        <Label Content="Conclusion" Width="150" FontSize="14" HorizontalAlignment="Left" Margin="502,249,0,0" VerticalAlignment="Top"/>
+        <Label Content="Assistant" Width="150" FontSize="14" HorizontalAlignment="Left" Margin="502,296,0,0" VerticalAlignment="Top"/>
+        <Label Content="Endoscopist" Width="150" FontSize="14" HorizontalAlignment="Left" Margin="502,343,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="SaveButton"  Width="213" FontSize="14" Content="Save Colon" HorizontalAlignment="Left" Margin="500,390,0,0" VerticalAlignment="Top" Height="63" Click="SaveButton_Click" Background="#8bb9f0"/>
+        <Button x:Name="ExcelButton"  Width="202" FontSize="14" Content="Excel Colon" HorizontalAlignment="Left" Margin="745,390,0,0" VerticalAlignment="Top" Height="63" Click="ExcelButton_Click"  Background="#FF6CE273"/>
+
+
+
+
+
+    </Grid>
+</UserControl>
