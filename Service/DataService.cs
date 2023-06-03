@@ -1,4 +1,5 @@
 ﻿using IssaWPF6.DAL;
+using IssaWPF6.Dtos;
 using IssaWPF6.Models;
 using Microsoft.EntityFrameworkCore;
 using OfficeOpenXml;
@@ -17,6 +18,9 @@ namespace IssaWPF6.Service
         public Task ExportColons();
         public Task ExportStomaches();
         public Task<Stomach> AddStomach(Stomach item);
+        public Task<List<StomachDto>> Stomaches();
+        public Task<List<ColonDto>> Colons();
+
     }
     public class DataService : IDataService
     {
@@ -55,6 +59,23 @@ namespace IssaWPF6.Service
             {
                 var colons = await db.Stomaches.Select(c => new StomachDto(c)).ToListAsync();
                 await Common.SaveExcel(colons);
+            }
+        }
+
+        public async Task<List<StomachDto>> Stomaches()
+        {
+            using (var db = new ApplicationDbContext())
+            {
+                return await db.Stomaches.Select(c => new StomachDto(c)).ToListAsync();
+            }
+        }
+        
+
+        public async Task<List<ColonDto>> Colons()
+        {
+            using (var db = new ApplicationDbContext())
+            {
+                return await db.Colons.Select(c => new ColonDto(c)).ToListAsync();
             }
         }
 

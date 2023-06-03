@@ -40,8 +40,8 @@
         <TextBox x:Name="Colon" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="358" FontSize="12" Margin="589,172,0,0"/>
         <TextBox x:Name="Rectum" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="358" FontSize="12" Margin="589,212,0,0"/>
         <TextBox x:Name="Conclusion" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="358" FontSize="12" Margin="589,260,0,0"/>
-        <TextBox x:Name="Assistant" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="358" FontSize="12" Margin="589,307,0,0"/>
-        <TextBox x:Name="Endoscopist" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="358" FontSize="12" Margin="589,347,0,0"/>
+        <TextBox x:Name="Endoscopist" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="358" FontSize="12" Margin="589,307,0,0"/>
+        <TextBox x:Name="Assistant" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="358" FontSize="12" Margin="589,347,0,0"/>
 
 
         <Label Content="Name" Width="151" FontSize="14" HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top"/>
@@ -59,11 +59,10 @@
         <Label Content="Ileum" Width="150" FontSize="14" HorizontalAlignment="Left" Margin="502,117,0,0" VerticalAlignment="Top"/>
         <Label Content="Colon" Width="150" FontSize="14" HorizontalAlignment="Left" Margin="502,166,0,0" VerticalAlignment="Top"/>
         <Label Content="Rectum" Width="150" FontSize="14" HorizontalAlignment="Left" Margin="502,208,0,0" VerticalAlignment="Top"/>
-        <Label Content="Conclusion" Width="150" FontSize="14" HorizontalAlignment="Left" Margin="502,249,0,0" VerticalAlignment="Top"/>
-        <Label Content="Assistant" Width="150" FontSize="14" HorizontalAlignment="Left" Margin="502,296,0,0" VerticalAlignment="Top"/>
-        <Label Content="Endoscopist" Width="150" FontSize="14" HorizontalAlignment="Left" Margin="502,343,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="SaveButton"  Width="213" FontSize="14" Content="Save Colon" HorizontalAlignment="Left" Margin="500,390,0,0" VerticalAlignment="Top" Height="63" Click="SaveButton_Click" Background="#8bb9f0"/>
-        <Button x:Name="ExcelButton"  Width="202" FontSize="14" Content="Excel Colon" HorizontalAlignment="Left" Margin="745,390,0,0" VerticalAlignment="Top" Height="63" Click="ExcelButton_Click"  Background="#FF6CE273"/>
+        <Label Content="Conclusion - Recommandations" Width="129" FontSize="14" HorizontalAlignment="Left" Margin="455,249,0,0" VerticalAlignment="Top" Height="53"/>
+        <Label Content="Endoscopist" Width="150" FontSize="14" HorizontalAlignment="Left" Margin="496,302,0,0" VerticalAlignment="Top"/>
+        <Label Content="Assistant" Width="150" FontSize="14" HorizontalAlignment="Left" Margin="502,337,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="SaveButton"  Width="447" FontSize="14" Content="Save" HorizontalAlignment="Left" Margin="500,390,0,0" VerticalAlignment="Top" Height="63" Click="SaveButton_Click" Background="#8bb9f0"/>
 
 
 

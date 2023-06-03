@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IssaWPF6.Service;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,9 +29,12 @@ namespace IssaWPF6.Views
         {
             InitializeComponent();
             Main = main;
+            _dataService = new DataService();
         }
 
         public MainWindow Main { get; }
+
+        private DataService _dataService;
 
         private void ColonButton_Click(object sender, RoutedEventArgs e)
         {
@@ -40,6 +44,30 @@ namespace IssaWPF6.Views
         private void OGDButton_Click(object sender, RoutedEventArgs e)
         {
             Main.DataContext = new OGDView(Main);
+        }
+
+        private async void ColonDataButton_Click(object sender, RoutedEventArgs e)
+        {
+            var newWindow = new MainWindow();
+            newWindow.DataContext = new ColonDataView();
+            newWindow.Show();
+        }
+
+        private async void ColonExcelButton_Click(object sender, RoutedEventArgs e)
+        {
+            await _dataService.ExportColons();
+        }
+
+        private async void OGDExcelButton_Click(object sender, RoutedEventArgs e)
+        {
+            await _dataService.ExportStomaches();
+        }
+
+        private void OGDDataButton_Click(object sender, RoutedEventArgs e)
+        {
+            var newWindow = new MainWindow();
+            newWindow.DataContext = new OGDDataView();
+            newWindow.Show();
         }
     }
 }

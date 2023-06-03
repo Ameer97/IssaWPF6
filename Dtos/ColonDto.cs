@@ -28,6 +28,10 @@ namespace IssaWPF6.Dtos
         public string Endoscopist { get; set; }
         public string Assistant { get; set; }
 
+        public ColonDto()
+        {
+            
+        }
         public ColonDto(Colon colon)
         {
             Name = colon.Name ?? " ";
@@ -71,6 +75,10 @@ namespace IssaWPF6.Dtos
         public string Assistant { get; set; }
         public string Endoscopist { get; set; }
 
+        public StomachDto()
+        {
+            
+        }
         public StomachDto(Stomach stomach)
         {
             Name = stomach.Name ?? "---";

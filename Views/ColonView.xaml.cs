@@ -1,6 +1,7 @@
 ﻿using IssaWPF6.Dtos;
 using IssaWPF6.Service;
 using IssaWPF6.Windows;
+using Microsoft.ReportingServices.ReportProcessing.ReportObjectModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -70,30 +71,7 @@ namespace IssaWPF6.Views
                 ReferredDoctor = ReferredDoctor.Text,
             });
 
-            var parameters = new List<KeyValuDto>
-            {
-                new KeyValuDto{ Key = "Age", Value = f.Age },
-                new KeyValuDto{ Key = "AnalInspection", Value = f.AnalInspection },
-                new KeyValuDto{ Key = "Assistant", Value = f.Assistant },
-                new KeyValuDto{ Key = "ClinicalData", Value = f.ClinicalData },
-                new KeyValuDto{ Key = "ColonDetails", Value = f.ColonDetails },
-                new KeyValuDto{ Key = "Conclusion", Value = f.Conclusion },
-                new KeyValuDto{ Key = "Endoscopist", Value = f.Endoscopist },
-                new KeyValuDto{ Key = "FileNo", Value = f.FileNo },
-                new KeyValuDto{ Key = "PRExam", Value = f.PRExam },
-                new KeyValuDto{ Key = "Gender", Value = f.Gender },
-                new KeyValuDto{ Key = "Ileum", Value = f.Ileum },
-                new KeyValuDto{ Key = "Name", Value = f.Name },
-                new KeyValuDto{ Key = "Premedication", Value = f.Premedication },
-                new KeyValuDto{ Key = "Preparation", Value = f.Preparation },
-                new KeyValuDto{ Key = "Rectum", Value = f.Rectum },
-                new KeyValuDto{ Key = "Scope", Value = f.Scope },
-                new KeyValuDto{ Key = "Date", Value = f.Date.ToString("dd-MM-yyyy") },
-                new KeyValuDto{ Key = "ReferredDoctor", Value = f.ReferredDoctor },
-            };
-
-            Common.RenderReport(parameters);
-            Main.DataContext = new StartView(Main);
+            Common.RenderColon(new ColonDto(f));
 
         }
 
@@ -113,9 +91,5 @@ namespace IssaWPF6.Views
             }
         }
 
-        private async void ExcelButton_Click(object sender, RoutedEventArgs e)
-        {
-            await _dataService.ExportColons();
-        }
     }
 }

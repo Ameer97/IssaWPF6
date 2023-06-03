@@ -73,29 +73,8 @@ namespace IssaWPF6.Views
                 Endoscopist = Endoscopist.Text
             });
 
-            var parameters = new List<KeyValuDto>
-            {
-                new KeyValuDto{ Key = "Name", Value = f.Name },
-                new KeyValuDto{ Key = "Age", Value = f.Age },
-                new KeyValuDto{ Key = "Gender", Value = f.Gender },
-                new KeyValuDto{ Key = "FileNo", Value = f.FileNo },
-                new KeyValuDto{ Key = "Date", Value = f.Date.ToString("dd-MM-yyyy") },
-                new KeyValuDto{ Key = "Premedication", Value = f.Premedication },
-                new KeyValuDto{ Key = "Scope", Value = f.Scope },
-                new KeyValuDto{ Key = "ReferredDoctor", Value = f.ReferredDoctor },
-                new KeyValuDto{ Key = "ClinicalData", Value = f.ClinicalData },
-                new KeyValuDto{ Key = "GEJ", Value = f.GEJ },
-                new KeyValuDto{ Key = "Esophagus", Value = f.Esophagus },
-                new KeyValuDto{ Key = "StomachDetails", Value = f.StomachDetails },
-                new KeyValuDto{ Key = "D1", Value = f.D1 },
-                new KeyValuDto{ Key = "D2", Value = f.D2 },
-                new KeyValuDto{ Key = "Conclusion", Value = f.Conclusion },
-                new KeyValuDto{ Key = "Assistant", Value = f.Assistant },
-                new KeyValuDto{ Key = "Endoscopist", Value = f.Endoscopist },
-        };
 
-            Common.RenderReport(parameters, isColon: false);
-            Main.DataContext = new StartView(Main);
+            Common.RenderOGD(new StomachDto(f));
 
         }
 
@@ -115,14 +94,7 @@ namespace IssaWPF6.Views
             }
         }
 
-        private async void ExcelButton_Click(object sender, RoutedEventArgs e)
-        {
-            await _dataService.ExportStomaches();
-        }
     }
 
-
-
-    
 
 }

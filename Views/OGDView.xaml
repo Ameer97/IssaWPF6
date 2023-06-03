@@ -49,8 +49,7 @@
         <Label Content="Conclusion" Width="150" FontSize="14" HorizontalAlignment="Left" Margin="502,208,0,0" VerticalAlignment="Top"/>
         <Label Content="Assistant" Width="150" FontSize="14" HorizontalAlignment="Left" Margin="502,249,0,0" VerticalAlignment="Top"/>
         <Label Content="Endoscopist" Width="150" FontSize="14" HorizontalAlignment="Left" Margin="502,296,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="SaveButton"  Width="208" FontSize="14" Content="Save OGD" HorizontalAlignment="Left" Margin="500,390,0,0" VerticalAlignment="Top" Height="63" Click="SaveButton_Click" Background="#f08df0"/>
-        <Button x:Name="ExcelButton"  Width="198" FontSize="14" Content="Excel OGD" HorizontalAlignment="Left" Margin="749,390,0,0" VerticalAlignment="Top" Height="63" Click="ExcelButton_Click"  Background="#FF6CE273"/>
+        <Button x:Name="SaveButton"  Width="447" FontSize="14" Content="Save" HorizontalAlignment="Left" Margin="500,390,0,0" VerticalAlignment="Top" Height="63" Click="SaveButton_Click" Background="#f08df0"/>
 
 
 

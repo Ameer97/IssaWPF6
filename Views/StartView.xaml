@@ -20,8 +20,8 @@
             Click="ColonButton_Click"
             Content="Colon" 
             Grid.Column="0"
-            Margin="25"
-            Background="#32BF84" 
+            Margin="25,25,25,116"
+            Background="#f5b042" 
             Foreground="#FFFFFF"
             BorderBrush="#DDD"
             BorderThickness="6"
@@ -33,7 +33,102 @@
                 <Style TargetType="{x:Type Border}">
                     <Setter 
                         Property="CornerRadius" 
-                        Value="50"/>
+                        Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+
+        <Button
+            x:Name="ColonDataButton"
+            Click="ColonDataButton_Click"
+            Content="Data" 
+            Grid.Column="0"
+            Margin="25,239,175,25"
+            Background="#343837" 
+            Foreground="#FFFFFF"
+            BorderBrush="#DDD"
+            BorderThickness="6"
+            Opacity="0.85" 
+            FontSize="40"
+            FontFamily="Calibri"
+            FontWeight="Bold">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter 
+                        Property="CornerRadius" 
+                        Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+
+        <Button
+            x:Name="OGDDataButton"
+            Click="OGDDataButton_Click"
+            Content="Data" 
+            Grid.Column="1"
+            Margin="37,239,163,25"
+            Background="#343837" 
+            Foreground="#FFFFFF"
+            BorderBrush="#DDD"
+            BorderThickness="6"
+            Opacity="0.85" 
+            FontSize="40"
+            FontFamily="Calibri"
+            FontWeight="Bold">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter 
+                        Property="CornerRadius" 
+                        Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <Button
+            x:Name="ColonExcelButton"
+            Click="ColonExcelButton_Click"
+            Content="Excel" 
+            Grid.Column="0"
+            Margin="195,239,25,25"
+            Background="#5cd117" 
+            Foreground="#FFFFFF"
+            BorderBrush="#DDD"
+            BorderThickness="6"
+            Opacity="0.85" 
+            FontSize="40"
+            FontFamily="Calibri"
+            FontWeight="Bold">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter 
+                        Property="CornerRadius" 
+                        Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+
+        <Button
+            x:Name="OGDExcelButton"
+            Click="OGDExcelButton_Click"
+            Content="Excel" 
+            Grid.Column="1"
+            Margin="205,239,15,25"
+            Background="#5cd117" 
+            Foreground="#FFFFFF"
+            BorderBrush="#DDD"
+            BorderThickness="6"
+            Opacity="0.85" 
+            FontSize="40"
+            FontFamily="Calibri"
+            FontWeight="Bold">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter 
+                        Property="CornerRadius" 
+                        Value="20"/>
                 </Style>
             </Button.Resources>
         </Button>
@@ -45,8 +140,8 @@
             Click="OGDButton_Click"
             Content=" OGD " 
             Grid.Column="1"
-            Margin="15 "
-            Background="#343837" 
+            Margin="37,15,15,116"
+            Background="#d63cd1" 
             Foreground="#FFFFFF"
             BorderBrush="#DDD"
             BorderThickness="6"
@@ -58,7 +153,7 @@
                 <Style TargetType="{x:Type Border}">
                     <Setter 
                         Property="CornerRadius" 
-                        Value="50"/>
+                        Value="20"/>
                 </Style>
             </Button.Resources>
         </Button>

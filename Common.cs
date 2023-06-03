@@ -55,40 +55,71 @@ namespace IssaWPF6
 
         public static string BinPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
 
-        //public static void Preview(object id, ReportClass cr, bool colon = true)
-        //{
-        //    var directory = colon ? "colon" : "stomache";
-        //    var path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\" + directory + "\\";
-        //    var file = id + "-" + DateTime.Now.Hour + "-" + DateTime.Now.Minute + "-" + DateTime.Now.Second + ".pdf";
-        //    var filename = path + file;
-        //    if (!Directory.Exists(path))
-        //        Directory.CreateDirectory(path);
+        public static void RenderColon(ColonDto f)
+        {
 
-        //    var ggg = path + file;
-        //    cr.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, ggg);
-        //    Process.Start(filename);
-        //}
+            var parameters = new List<KeyValuDto>
+            {
+                new KeyValuDto{ Key = "Age", Value = f.Age },
+                new KeyValuDto{ Key = "AnalInspection", Value = f.AnalInspection },
+                new KeyValuDto{ Key = "Assistant", Value = f.Assistant },
+                new KeyValuDto{ Key = "ClinicalData", Value = f.ClinicalData },
+                new KeyValuDto{ Key = "ColonDetails", Value = f.ColonDetails },
+                new KeyValuDto{ Key = "Conclusion", Value = f.Conclusion },
+                new KeyValuDto{ Key = "Endoscopist", Value = f.Endoscopist },
+                new KeyValuDto{ Key = "FileNo", Value = f.FileNo },
+                new KeyValuDto{ Key = "PRExam", Value = f.PRExam },
+                new KeyValuDto{ Key = "Gender", Value = f.Gender },
+                new KeyValuDto{ Key = "Ileum", Value = f.Ileum },
+                new KeyValuDto{ Key = "Name", Value = f.Name },
+                new KeyValuDto{ Key = "Premedication", Value = f.Premedication },
+                new KeyValuDto{ Key = "Preparation", Value = f.Preparation },
+                new KeyValuDto{ Key = "Rectum", Value = f.Rectum },
+                new KeyValuDto{ Key = "Scope", Value = f.Scope },
+                new KeyValuDto{ Key = "Date", Value = f.Date },
+                new KeyValuDto{ Key = "ReferredDoctor", Value = f.ReferredDoctor },
+            };
+
+            RenderReport(parameters);
+        }
 
 
-        /// <summary>
-        /// References:
-        /// </summary>
+
+        public static void RenderOGD(StomachDto f)
+        {
+
+
+            var parameters = new List<KeyValuDto>
+            {
+                new KeyValuDto{ Key = "Name", Value = f.Name },
+                new KeyValuDto{ Key = "Age", Value = f.Age },
+                new KeyValuDto{ Key = "Gender", Value = f.Gender },
+                new KeyValuDto{ Key = "FileNo", Value = f.FileNo },
+                new KeyValuDto{ Key = "Date", Value = f.Date },
+                new KeyValuDto{ Key = "Premedication", Value = f.Premedication },
+                new KeyValuDto{ Key = "Scope", Value = f.Scope },
+                new KeyValuDto{ Key = "ReferredDoctor", Value = f.ReferredDoctor },
+                new KeyValuDto{ Key = "ClinicalData", Value = f.ClinicalData },
+                new KeyValuDto{ Key = "GEJ", Value = f.GEJ },
+                new KeyValuDto{ Key = "Esophagus", Value = f.Esophagus },
+                new KeyValuDto{ Key = "StomachDetails", Value = f.StomachDetails },
+                new KeyValuDto{ Key = "D1", Value = f.D1 },
+                new KeyValuDto{ Key = "D2", Value = f.D2 },
+                new KeyValuDto{ Key = "Conclusion", Value = f.Conclusion },
+                new KeyValuDto{ Key = "Assistant", Value = f.Assistant },
+                new KeyValuDto{ Key = "Endoscopist", Value = f.Endoscopist },
+            };
+
+            RenderReport(parameters, isColon: false);
+        }
+
         public static void RenderReport(List<KeyValuDto> Parameters, bool isColon = true)
         {
             LocalReport localReport = new LocalReport();
-            localReport.ReportPath = string.Format(BinPath + @"\Reports\{0}.rdlc", isColon ? "colon" : "stomach");
+            localReport.ReportPath = string.Format(@"Reports\{0}.rdlc", isColon ? "colon" : "stomach");
 
             Parameters.ForEach(p => localReport.SetParameters(new ReportParameter(p.Key, p.Value)));
 
-
-
-            //A method that returns a collection for our report
-            //Note: A report can have multiple data sources
-            //List<Employee> employeeCollection = GetData();
-
-            //Give the collection a name (EmployeeCollection) so that we can reference it in our report designer
-            //ReportDataSource reportDataSource = new ReportDataSource("EmployeeCollection", employeeCollection);
-            //localReport.DataSources.Add(reportDataSource);
 
             string reportType = "PDF";
             string mimeType;
@@ -126,16 +157,6 @@ namespace IssaWPF6
             var fullPath =System.IO.Path.Combine( Path , "a" + DateTime.Now.ToString("ssmmhhddMMyyyy") + ".pdf");
             File.WriteAllBytes(fullPath, renderedBytes);
             Process.Start(@"cmd.exe ", @"/c " + fullPath);
-
-
-            //Clear the response stream and write the bytes to the outputstream
-            //Set content-disposition to "attachment" so that user is prompted to take an action
-            //on the file (open or save)
-            //Response.Clear();
-            //Response.ContentType = mimeType;
-            //Response.AddHeader("content-disposition", "attachment; filename=foo." + fileNameExtension);
-            //Response.BinaryWrite(renderedBytes);
-            //Response.End();
 
         }
 
