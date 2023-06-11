@@ -1,4 +1,5 @@
 ﻿using IssaWPF6.Dtos;
+using IssaWPF6.Models;
 using IssaWPF6.Service;
 using IssaWPF6.Windows;
 using Microsoft.ReportingServices.ReportProcessing.ReportObjectModel;
@@ -26,7 +27,7 @@ namespace IssaWPF6.Views
     {
         private DataService _dataService;
         private DialogWindow _dialog = new();
-
+        private Colon colon = new Models.Colon();
         public ColonView()
         {
             InitializeComponent();
@@ -49,30 +50,27 @@ namespace IssaWPF6.Views
 
         private async void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            var g = new Models.Colon
-            {
-                Age = Age.Text,
-                AnalInspection = AnalInspection.Text,
-                Assistant = Assistant.Text,
-                ClinicalData = ClinicalData.Text,
-                ColonDetails = Colon.Text,
-                Conclusion = Conclusion.Text,
-                Endoscopist = Endoscopist.Text,
-                FileNo = FileNo.Text,
-                PRExam = PRExam.Text,
-                Gender = Gender.SelectedItem?.ToString(),
-                Ileum = Ileum.Text,
-                Name = Name.Text,
-                Premedication = Premedication.Text,
-                Preparation = Preparation.SelectedItem?.ToString(),
-                Rectum = Rectum.Text,
-                Scope = Scope.SelectedItem?.ToString(),
-                Date = DateTimePicker1.SelectedDate?.Date ?? DateTime.UtcNow,
-                ReferredDoctor = ReferredDoctor.Text,
-            };
-            var f = await _dataService.AddColon(g);
+            colon.Age = Age.Text;
+            colon.AnalInspection = AnalInspection.Text;
+            colon.Assistant = Assistant.Text;
+            colon.ClinicalData = ClinicalData.Text;
+            colon.ColonDetails = Colon.Text;
+            colon.Conclusion = Conclusion.Text;
+            colon.Endoscopist = Endoscopist.Text;
+            colon.FileNo = FileNo.Text;
+            colon.PRExam = PRExam.Text;
+            colon.Gender = Gender.SelectedItem?.ToString();
+            colon.Ileum = Ileum.Text;
+            colon.Name = Name.Text;
+            colon.Premedication = Premedication.Text;
+            colon.Preparation = Preparation.SelectedItem?.ToString();
+            colon.Rectum = Rectum.Text;
+            colon.Scope = Scope.SelectedItem?.ToString();
+            colon.Date = DateTimePicker1.SelectedDate?.Date ?? DateTime.UtcNow;
+            colon.ReferredDoctor = ReferredDoctor.Text;
+            colon = await _dataService.AddColon(colon);
 
-            Common.RenderColon(new ColonDto(f));
+            Common.RenderColon(new ColonDto(colon));
 
         }
 

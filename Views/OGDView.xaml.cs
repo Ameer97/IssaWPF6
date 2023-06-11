@@ -30,7 +30,7 @@ namespace IssaWPF6.Views
     {
         private DataService _dataService;
         private DialogWindow _dialog = new();
-
+        private Stomach stomach = new();
         public MainWindow Main { get; }
 
         public OGDView()
@@ -52,30 +52,27 @@ namespace IssaWPF6.Views
 
         private async void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            var g = new Models.Stomach
-            {
-                Name = Name.Text,
-                Age = Age.Text,
-                Gender = Gender.SelectedItem?.ToString(),
-                FileNo = FileNo.Text,
-                Date = Date.SelectedDate?.Date ?? DateTime.UtcNow,
-                Premedication = Premedication.Text,
-                Scope = Scope.SelectedItem?.ToString(),
-                ReferredDoctor = ReferredDoctor.Text,
-                ClinicalData = ClinicalData.Text,
-                GEJ = GEJ.Text,
-                Esophagus = Esophagus.Text,
-                StomachDetails = StomachDetails.Text,
-                D1 = D1.Text,
-                D2 = D2.Text,
-                Conclusion = Conclusion.Text,
-                Assistant = Assistant.Text,
-                Endoscopist = Endoscopist.Text
-            };
-            var f = await _dataService.AddStomach(g);
+            stomach.Name = Name.Text;
+            stomach.Age = Age.Text;
+            stomach.Gender = Gender.SelectedItem?.ToString();
+            stomach.FileNo = FileNo.Text;
+            stomach.Date = Date.SelectedDate?.Date ?? DateTime.UtcNow;
+            stomach.Premedication = Premedication.Text;
+            stomach.Scope = Scope.SelectedItem?.ToString();
+            stomach.ReferredDoctor = ReferredDoctor.Text;
+            stomach.ClinicalData = ClinicalData.Text;
+            stomach.GEJ = GEJ.Text;
+            stomach.Esophagus = Esophagus.Text;
+            stomach.StomachDetails = StomachDetails.Text;
+            stomach.D1 = D1.Text;
+            stomach.D2 = D2.Text;
+            stomach.Conclusion = Conclusion.Text;
+            stomach.Assistant = Assistant.Text;
+            stomach.Endoscopist = Endoscopist.Text;
+            stomach = await _dataService.AddStomach(stomach);
 
 
-            Common.RenderOGD(new StomachDto(f));
+            Common.RenderOGD(new StomachDto(stomach));
 
         }
 

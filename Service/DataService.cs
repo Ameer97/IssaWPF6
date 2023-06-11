@@ -29,7 +29,10 @@ namespace IssaWPF6.Service
         {
             using(var db = new ApplicationDbContext())
             {
-                await db.Colons.AddAsync(item);
+                if(!(item.Id > 0))
+                    await db.Colons.AddAsync(item);
+                else
+                    db.Colons.Update(item);
                 await db.SaveChangesAsync();
                 return item;
             } 
@@ -39,7 +42,10 @@ namespace IssaWPF6.Service
         {
             using(var db = new ApplicationDbContext())
             {
-                await db.Stomaches.AddAsync(item);
+                if (!(item.Id > 0))
+                    await db.Stomaches.AddAsync(item);
+                else
+                    db.Stomaches.Update(item);
                 await db.SaveChangesAsync();
                 return item;
             } 
