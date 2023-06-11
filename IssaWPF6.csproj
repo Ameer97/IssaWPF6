@@ -5,11 +5,11 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+	  <Platforms>AnyCPU;x64;x86</Platforms>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="CrystalDecisions.CrystalReports.Engine" Version="1.0.0" />
-    <PackageReference Include="EPPlus" Version="6.2.4" />
+    <PackageReference Include="EPPlus" Version="5.6.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.5">
       <PrivateAssets>all</PrivateAssets>
@@ -19,19 +19,11 @@
 	  <PackageReference Include="ReportViewerCore.WinForms" Version="15.1.17" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Compile Update="Views\OGDDataView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Views\ColonDataView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Views\ColonView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-  </ItemGroup>
 
   <ItemGroup>
+    <None Update="Reports">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Reports\colon.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -39,5 +31,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+
 
 </Project>

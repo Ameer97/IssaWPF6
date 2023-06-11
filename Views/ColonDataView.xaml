@@ -17,7 +17,7 @@
     <Grid>
         <DataGrid x:Name="Table" d:ItemsSource="{d:SampleData ItemCount=5}" MouseDoubleClick="Table_MouseDoubleClick"/>
 
-        <!--<TextBox x:Name="Gender" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="440" FontSize="12" Margin="161,195,0,0"/>-->
+        <!--<TextBox x:Name="Gender" HorizontalAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True" Text="" VerticalAlignment="Top" Width="440" FontSize="12" Margin="161,195,0,0"/>-->
 
 
 

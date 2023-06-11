@@ -9,6 +9,7 @@ namespace IssaWPF6.Dtos
 {
     public class ColonDto
     {
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Age { get; set; }
         public string Gender { get; set; }
@@ -34,11 +35,12 @@ namespace IssaWPF6.Dtos
         }
         public ColonDto(Colon colon)
         {
+            Id = colon.Id;
             Name = colon.Name ?? " ";
             Age = colon.Age ?? " ";
             Gender = colon.Gender ?? " ";
             FileNo = colon.FileNo ?? " ";
-            Date = colon.Date.ToString("dd-MM-yyyy") ?? " ";
+            Date = colon.Date?.Date.ToString("dd-MM-yyyy") ?? " ";
             Premedication = colon.Premedication ?? " ";
             Scope = colon.Scope ?? " ";
             ReferredDoctor = colon.ReferredDoctor ?? " ";
@@ -57,6 +59,7 @@ namespace IssaWPF6.Dtos
 
     public class StomachDto
     {
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Age { get; set; }
         public string Gender { get; set; }
@@ -81,11 +84,12 @@ namespace IssaWPF6.Dtos
         }
         public StomachDto(Stomach stomach)
         {
+            Id = stomach.Id;
             Name = stomach.Name ?? "---";
             Age = stomach.Age ?? "---";
             Gender = stomach.Gender ?? "---";
             FileNo = stomach.FileNo ?? "---";
-            Date = stomach.Date.ToString("dd-MM-yyyy") ?? "---";
+            Date = stomach.Date?.Date.ToString("dd-MM-yyyy") ?? "---";
             Premedication = stomach.Premedication ?? "---";
             Scope = stomach.Scope ?? "---";
             ReferredDoctor = stomach.ReferredDoctor ?? "---";

@@ -1,4 +1,6 @@
 ﻿using IssaWPF6.Service;
+using IssaWPF6.Windows;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +32,7 @@ namespace IssaWPF6.Views
             InitializeComponent();
             Main = main;
             _dataService = new DataService();
+            _dataService.Migrate();
         }
 
         public MainWindow Main { get; }
@@ -38,12 +41,16 @@ namespace IssaWPF6.Views
 
         private void ColonButton_Click(object sender, RoutedEventArgs e)
         {
-            Main.DataContext = new ColonView(Main);
+            var main = new FullWindow();
+            main.DataContext = new ColonView(Main);
+            main.Show();
         }
 
         private void OGDButton_Click(object sender, RoutedEventArgs e)
         {
-            Main.DataContext = new OGDView(Main);
+            var main = new FullWindow();
+            main.DataContext = new OGDView(Main);
+            main.Show();
         }
 
         private async void ColonDataButton_Click(object sender, RoutedEventArgs e)
@@ -56,11 +63,23 @@ namespace IssaWPF6.Views
         private async void ColonExcelButton_Click(object sender, RoutedEventArgs e)
         {
             await _dataService.ExportColons();
+            //var fileDialog = new OpenFileDialog();
+            //if (fileDialog.ShowDialog() == true)
+            //{
+            //    Common.ImportColonsExcel(fileDialog.FileName);
+
+            //}
         }
 
         private async void OGDExcelButton_Click(object sender, RoutedEventArgs e)
         {
             await _dataService.ExportStomaches();
+            //var fileDialog = new OpenFileDialog();
+            //if (fileDialog.ShowDialog() == true)
+            //{
+            //    Common.ImportODGExcel(fileDialog.FileName);
+
+            //}
         }
 
         private void OGDDataButton_Click(object sender, RoutedEventArgs e)

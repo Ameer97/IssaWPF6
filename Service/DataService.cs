@@ -20,6 +20,7 @@ namespace IssaWPF6.Service
         public Task<Stomach> AddStomach(Stomach item);
         public Task<List<StomachDto>> Stomaches();
         public Task<List<ColonDto>> Colons();
+        public void Migrate();
 
     }
     public class DataService : IDataService
@@ -79,6 +80,13 @@ namespace IssaWPF6.Service
             }
         }
 
+        public void Migrate()
+        {
+            using (var db = new ApplicationDbContext())
+            {
+                db.Database.Migrate();
 
+            }
+        }
     }
 }

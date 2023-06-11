@@ -10,48 +10,51 @@
              Opacity="0.9"
              BorderBrush="Transparent"
              BorderThickness="4" 
-             Width="1000"
-             Height="480" KeyDown="UserControl_KeyDown">
+             KeyDown="UserControl_KeyDown"
+        Width="{x:Static SystemParameters.PrimaryScreenWidth}"
+        Height="{x:Static SystemParameters.PrimaryScreenHeight}"
+             >
 
     <Grid>
-        <TextBox x:Name="Name" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="337" FontSize="12" Margin="126,37,0,0"/>
-        <TextBox x:Name="Age" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="337" FontSize="12" Margin="126,80,0,0" />
-        <ComboBox x:Name="Gender" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Width="337" FontSize="12" Margin="126,121,0,0" />
-        <TextBox x:Name="FileNo" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="337" FontSize="12" Margin="126,172,0,0" />
-        <DatePicker x:Name="Date" HorizontalAlignment="Left"  Text="" VerticalAlignment="Top" Width="337" FontSize="12" Margin="126,212,0,0" SelectedDate="{x:Static sys:DateTime.Now}" />
-        <TextBox x:Name="Premedication" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="337" FontSize="12" Margin="126,255,0,0"/>
-        <ComboBox x:Name="Scope" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Width="337" FontSize="12" Margin="126,299,0,0" />
-        <TextBox x:Name="ReferredDoctor" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="337" FontSize="12" Margin="126,347,0,0"/>
-        <TextBox x:Name="ClinicalData" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="337" FontSize="12" Margin="126,390,0,0"/>
-        <TextBox x:Name="GEJ" HorizontalAlignment="Left" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="337" FontSize="12" Margin="126,431,0,0" />
-        <TextBox x:Name="Esophagus" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="337" FontSize="12" Margin="610,37,0,0"/>
-        <TextBox x:Name="StomachDetails" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="337" FontSize="12" Margin="610,80,0,0"/>
-        <TextBox x:Name="D1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="358" FontSize="12" Margin="589,123,0,0"/>
-        <TextBox x:Name="D2" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="358" FontSize="12" Margin="589,172,0,0"/>
-        <TextBox x:Name="Conclusion" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="358" FontSize="12" Margin="589,214,0,0"/>
-        <TextBox x:Name="Assistant" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="358" FontSize="12" Margin="589,257,0,0"/>
-        <TextBox x:Name="Endoscopist" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="358" FontSize="12" Margin="589,303,0,0"/>
+        <TextBox x:Name="Name" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="500" FontSize="12" Margin="126,25,0,0"/>
+        <TextBox x:Name="Age" HorizontalAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True" Text="" VerticalAlignment="Top" Width="500" FontSize="12" Margin="126,100,0,0" />
+        <ComboBox x:Name="Gender" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Width="500" FontSize="12" Margin="126,168,0,0" />
+        <TextBox x:Name="FileNo" HorizontalAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True" Text="" VerticalAlignment="Top" Width="500" FontSize="12" Margin="126,221,0,0" />
+        <DatePicker x:Name="Date" HorizontalAlignment="Left"  Text="" VerticalAlignment="Top" Width="500" FontSize="12" Margin="126,296,0,0" SelectedDate="{x:Static sys:DateTime.Now}" />
+        <TextBox x:Name="Premedication" HorizontalAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True" Text="" VerticalAlignment="Top" Width="500" FontSize="12" Margin="126,347,0,0"/>
+        <ComboBox x:Name="Scope" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Width="500" FontSize="12" Margin="126,426,0,0" />
+        <TextBox x:Name="ReferredDoctor" HorizontalAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True" Text="" VerticalAlignment="Top" Width="500" FontSize="12" Margin="126,471,0,0"/>
+        <TextBox x:Name="ClinicalData" HorizontalAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True" Text="" VerticalAlignment="Top" Width="500" FontSize="12" Margin="126,542,0,0"/>
+        <TextBox x:Name="GEJ" HorizontalAlignment="Left" Text="" TextWrapping="Wrap" AcceptsReturn="True" VerticalAlignment="Top" Width="500" FontSize="12" Margin="126,604,0,0" />
+        <TextBox x:Name="Esophagus" HorizontalAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True" Text="" VerticalAlignment="Top" Width="606" FontSize="12" Margin="734,25,0,0"/>
+        <TextBox x:Name="StomachDetails" HorizontalAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True" Text="" VerticalAlignment="Top" Width="606" FontSize="12" Margin="734,136,0,0"/>
+        <TextBox x:Name="D1" HorizontalAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True" Text="" VerticalAlignment="Top" Width="606" FontSize="12" Margin="734,240,0,0"/>
+        <TextBox x:Name="D2" HorizontalAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True" Text="" VerticalAlignment="Top" Width="606" FontSize="12" Margin="734,341,0,0"/>
+        <TextBox x:Name="Conclusion" HorizontalAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True" Text="" VerticalAlignment="Top" Width="606" FontSize="12" Margin="734,423,0,0"/>
+        <TextBox x:Name="Endoscopist" HorizontalAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True" Text="" VerticalAlignment="Top" Width="606" FontSize="12" Margin="734,537,0,0"/>
+        <TextBox x:Name="Assistant" HorizontalAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True" Text="" VerticalAlignment="Top" Width="606" FontSize="12" Margin="734,578,0,0"/>
 
-        <Label Content="Name" Width="151" FontSize="14" HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top"/>
-        <Label Content="Age" Width="151" FontSize="14" HorizontalAlignment="Left" Margin="10,75,0,0" VerticalAlignment="Top"/>
-        <Label Content="Gender" Width="151" FontSize="14" HorizontalAlignment="Left" Margin="10,117,0,0" VerticalAlignment="Top"/>
-        <Label Content="FileNo" Width="151" FontSize="14" HorizontalAlignment="Left" Margin="10,166,0,0" VerticalAlignment="Top"/>
-        <Label Content="Date" Width="151" FontSize="14" HorizontalAlignment="Left" Margin="10,208,0,0" VerticalAlignment="Top"/>
-        <Label Content="Premedication" Width="151" FontSize="14" HorizontalAlignment="Left" Margin="10,249,0,0" VerticalAlignment="Top"/>
-        <Label Content="Scope" Width="151" FontSize="14" HorizontalAlignment="Left" Margin="10,296,0,0" VerticalAlignment="Top"/>
-        <Label Content="ReferredDoctor" Width="151" FontSize="14" HorizontalAlignment="Left" Margin="10,343,0,0" VerticalAlignment="Top"/>
-        <Label Content="ClinicalData" Width="151" FontSize="14" HorizontalAlignment="Left" Margin="10,386,0,0" VerticalAlignment="Top"/>
-        <Label Content="GEJ" Width="151" FontSize="14" HorizontalAlignment="Left" Margin="10,429,0,0" VerticalAlignment="Top"/>
-        <Label Content="Esophagus" Width="150" FontSize="14" HorizontalAlignment="Left" Margin="502,32,0,0" VerticalAlignment="Top"/>
-        <Label Content="StomachDetails" Width="150" FontSize="14" HorizontalAlignment="Left" Margin="502,75,0,0" VerticalAlignment="Top"/>
-        <Label Content="D1" Width="150" FontSize="14" HorizontalAlignment="Left" Margin="502,117,0,0" VerticalAlignment="Top"/>
-        <Label Content="D2" Width="150" FontSize="14" HorizontalAlignment="Left" Margin="502,166,0,0" VerticalAlignment="Top"/>
-        <Label Content="Conclusion" Width="150" FontSize="14" HorizontalAlignment="Left" Margin="502,208,0,0" VerticalAlignment="Top"/>
-        <Label Content="Assistant" Width="150" FontSize="14" HorizontalAlignment="Left" Margin="502,249,0,0" VerticalAlignment="Top"/>
-        <Label Content="Endoscopist" Width="150" FontSize="14" HorizontalAlignment="Left" Margin="502,296,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="SaveButton"  Width="447" FontSize="14" Content="Save" HorizontalAlignment="Left" Margin="500,390,0,0" VerticalAlignment="Top" Height="63" Click="SaveButton_Click" Background="#f08df0"/>
+        <Label Content="Name" Width="151" FontSize="14" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top"/>
+        <Label Content="Age" Width="151" FontSize="14" HorizontalAlignment="Left" Margin="10,92,0,0" VerticalAlignment="Top"/>
+        <Label Content="Gender" Width="151" FontSize="14" HorizontalAlignment="Left" Margin="10,164,0,0" VerticalAlignment="Top"/>
+        <Label Content="FileNo" Width="151" FontSize="14" HorizontalAlignment="Left" Margin="10,215,0,0" VerticalAlignment="Top"/>
+        <Label Content="Date" Width="151" FontSize="14" HorizontalAlignment="Left" Margin="10,292,0,0" VerticalAlignment="Top"/>
+        <Label Content="Premedication" Width="151" FontSize="14" HorizontalAlignment="Left" Margin="10,342,0,0" VerticalAlignment="Top"/>
+        <Label Content="Scope" Width="151" FontSize="14" HorizontalAlignment="Left" Margin="10,424,0,0" VerticalAlignment="Top"/>
+        <Label Content="ReferredDoctor" Width="151" FontSize="14" HorizontalAlignment="Left" Margin="10,467,0,0" VerticalAlignment="Top"/>
+        <Label Content="ClinicalData" Width="151" FontSize="14" HorizontalAlignment="Left" Margin="10,538,0,0" VerticalAlignment="Top"/>
+        <Label Content="GEJ" Width="151" FontSize="14" HorizontalAlignment="Left" Margin="10,602,0,0" VerticalAlignment="Top"/>
+        <Label Content="Esophagus" Width="150" FontSize="14" HorizontalAlignment="Left" Margin="644,20,0,0" VerticalAlignment="Top"/>
+        <Label Content="Stomach" Width="150" FontSize="14" HorizontalAlignment="Left" Margin="644,128,0,0" VerticalAlignment="Top"/>
+        <Label Content="D1" Width="150" FontSize="14" HorizontalAlignment="Left" Margin="644,234,0,0" VerticalAlignment="Top"/>
+        <Label Content="D2" Width="150" FontSize="14" HorizontalAlignment="Left" Margin="644,335,0,0" VerticalAlignment="Top"/>
+        <Label Content="Conclusion" Width="150" FontSize="14" HorizontalAlignment="Left" Margin="644,416,0,0" VerticalAlignment="Top"/>
+        <Label Content="Endoscopist" Width="150" FontSize="14" HorizontalAlignment="Left" Margin="644,529,0,0" VerticalAlignment="Top"/>
+        <Label Content="Assistant" Width="150" FontSize="14" HorizontalAlignment="Left" Margin="644,572,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="SaveButton"  Width="696" FontSize="14" Content="Save" HorizontalAlignment="Left" Margin="644,618,0,0" VerticalAlignment="Top" Height="62" Click="SaveButton_Click" Background="#f08df0"/>
 
 
+        <Label Content="Recommendations" Width="150" FontSize="9" HorizontalAlignment="Left" Margin="644,431,0,0" VerticalAlignment="Top"/>
 
 
 

@@ -39,7 +39,7 @@ namespace IssaWPF6.Views
 
             Preparation.ItemsSource = new List<string> { Enum.Preparation.Good, Enum.Preparation.Bad, Enum.Preparation.Fair };
             Gender.ItemsSource = new List<string> { Enum.Gender.Male, Enum.Gender.Female };
-            Scope.ItemsSource = new List<string> { Enum.Scope.Olympus, Enum.Scope.Pentax };
+            Scope.ItemsSource = new List<string> { Enum.Scope.Olympus, Enum.Scope.Pentax, Enum.Scope.Fujifilm };
 
             DateTimePicker1.SelectedDate = DateTime.UtcNow.Date;
             Main = main;
@@ -49,7 +49,7 @@ namespace IssaWPF6.Views
 
         private async void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            var f = await _dataService.AddColon(new Models.Colon
+            var g = new Models.Colon
             {
                 Age = Age.Text,
                 AnalInspection = AnalInspection.Text,
@@ -60,16 +60,17 @@ namespace IssaWPF6.Views
                 Endoscopist = Endoscopist.Text,
                 FileNo = FileNo.Text,
                 PRExam = PRExam.Text,
-                Gender = Gender.SelectedItem.ToString(),
+                Gender = Gender.SelectedItem?.ToString(),
                 Ileum = Ileum.Text,
                 Name = Name.Text,
                 Premedication = Premedication.Text,
-                Preparation = Preparation.SelectedItem.ToString(),
+                Preparation = Preparation.SelectedItem?.ToString(),
                 Rectum = Rectum.Text,
-                Scope = Scope.SelectedItem.ToString(),
+                Scope = Scope.SelectedItem?.ToString(),
                 Date = DateTimePicker1.SelectedDate?.Date ?? DateTime.UtcNow,
                 ReferredDoctor = ReferredDoctor.Text,
-            });
+            };
+            var f = await _dataService.AddColon(g);
 
             Common.RenderColon(new ColonDto(f));
 

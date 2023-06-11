@@ -21,5 +21,6 @@ namespace IssaWPF6.Enum
     {
         public const string Olympus = "Olympus";
         public const string Pentax = "Pentax";
+        public const string Fujifilm = "Fujifilm";
     }
 }

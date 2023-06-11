@@ -43,7 +43,7 @@ namespace IssaWPF6.Views
             _dataService = new DataService();
 
             Gender.ItemsSource = new List<string> { Enum.Gender.Male, Enum.Gender.Female };
-            Scope.ItemsSource = new List<string> { Enum.Scope.Olympus, Enum.Scope.Pentax };
+            Scope.ItemsSource = new List<string> { Enum.Scope.Olympus, Enum.Scope.Pentax, Enum.Scope.Fujifilm };
 
             Date.SelectedDate = DateTime.UtcNow.Date;
             Main = main;
@@ -52,15 +52,15 @@ namespace IssaWPF6.Views
 
         private async void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            var f = await _dataService.AddStomach(new Models.Stomach
+            var g = new Models.Stomach
             {
                 Name = Name.Text,
                 Age = Age.Text,
-                Gender = Gender.SelectedItem.ToString(),
+                Gender = Gender.SelectedItem?.ToString(),
                 FileNo = FileNo.Text,
                 Date = Date.SelectedDate?.Date ?? DateTime.UtcNow,
                 Premedication = Premedication.Text,
-                Scope = Scope.SelectedItem.ToString(),
+                Scope = Scope.SelectedItem?.ToString(),
                 ReferredDoctor = ReferredDoctor.Text,
                 ClinicalData = ClinicalData.Text,
                 GEJ = GEJ.Text,
@@ -71,7 +71,8 @@ namespace IssaWPF6.Views
                 Conclusion = Conclusion.Text,
                 Assistant = Assistant.Text,
                 Endoscopist = Endoscopist.Text
-            });
+            };
+            var f = await _dataService.AddStomach(g);
 
 
             Common.RenderOGD(new StomachDto(f));
