@@ -44,6 +44,7 @@ namespace IssaWPF6.Views
 
             DateTimePicker1.SelectedDate = DateTime.UtcNow.Date;
             Main = main;
+
         }
 
         public MainWindow Main { get; }
@@ -90,5 +91,10 @@ namespace IssaWPF6.Views
             }
         }
 
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            Name.Focus();
+
+        }
     }
 }

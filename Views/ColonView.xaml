@@ -13,6 +13,7 @@
              KeyDown="UserControl_KeyDown"
              Width="{x:Static SystemParameters.PrimaryScreenWidth}"
              Height="{x:Static SystemParameters.PrimaryScreenHeight}"
+             Loaded="UserControl_Loaded"
              >
     <Grid>
         <TextBox x:Name="Name" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="480" FontSize="12" Margin="126,37,0,0"/>

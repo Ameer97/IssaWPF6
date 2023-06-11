@@ -92,6 +92,10 @@ namespace IssaWPF6.Views
             }
         }
 
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            Name.Focus();
+        }
     }
 
 

@@ -13,6 +13,7 @@
              KeyDown="UserControl_KeyDown"
         Width="{x:Static SystemParameters.PrimaryScreenWidth}"
         Height="{x:Static SystemParameters.PrimaryScreenHeight}"
+             Loaded="UserControl_Loaded"
              >
 
     <Grid>
