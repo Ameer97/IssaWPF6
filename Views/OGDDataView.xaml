@@ -12,10 +12,12 @@
              BorderThickness="4" 
              Width="1000"
              Height="480"
-             Loaded="UserControl_Loaded"
+             Loaded="Load"
              >
     <Grid>
-        <DataGrid x:Name="Table" d:ItemsSource="{d:SampleData ItemCount=5}" MouseDoubleClick="Table_MouseDoubleClick" />
+        <Button x:Name="PDF" Content="PDF" HorizontalAlignment="Left" Margin="80,22,0,0" VerticalAlignment="Top" Height="68" Width="167" Click="PDF_Click"/>
+        <Button x:Name="Edit" Content="Edit" HorizontalAlignment="Left" Margin="294,22,0,0" VerticalAlignment="Top" Height="68" Width="166" Click="Edit_Click"/>
+        <DataGrid x:Name="Table" d:ItemsSource="{d:SampleData ItemCount=5}" MouseDoubleClick="Table_MouseDoubleClick" Margin="0,96,0,0" />
 
         <!--<TextBox x:Name="Gender" HorizontalAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True" Text="" VerticalAlignment="Top" Width="440" FontSize="12" Margin="161,195,0,0"/>-->
 

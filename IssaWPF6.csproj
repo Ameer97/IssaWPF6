@@ -24,6 +24,9 @@
     <None Update="Reports">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Reports\colon - Copy.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Reports\colon.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

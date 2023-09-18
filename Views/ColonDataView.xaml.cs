@@ -38,8 +38,9 @@ namespace IssaWPF6.Views
             Table.RowStyle = rowStyle;
         }
 
-        private async void UserControl_Loaded(object sender, RoutedEventArgs e)
+        public async void Load(object? sender = null, RoutedEventArgs? e = null)
         {
+            Table.ItemsSource = null;
             Table.ItemsSource = await _dataService.Colons();
         }
 
@@ -52,6 +53,43 @@ namespace IssaWPF6.Views
                 var item = (ColonDto)row.Item;
                 Common.RenderColon(item);
             }
+        }
+
+        void SelectedF(int casee)
+        {
+            var selectedIndex = Table.SelectedIndex;
+            if (selectedIndex == -1) return;
+
+            var item = Table.Items.SourceCollection.Cast<ColonDto>().ToArray()[selectedIndex];
+
+            if (item == null) return;
+
+            switch (casee)
+            {
+                case 0:
+                    Common.RenderColon(item);
+                    break;
+                case 1:
+                    {
+                        var main = new FullWindow();
+                        main.DataContext = new ColonView(id:item.Id,colonDataView:this);
+                        main.Show();
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void PDF_Click(object sender, RoutedEventArgs e)
+        {
+            SelectedF(0);
+        }
+
+
+        private void Edit_Click(object sender, RoutedEventArgs e)
+        {
+            SelectedF(1);
         }
     }
 }

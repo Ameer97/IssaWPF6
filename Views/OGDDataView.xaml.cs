@@ -37,7 +37,7 @@ namespace IssaWPF6.Views
             Table.RowStyle = rowStyle;
         }
 
-        private async void UserControl_Loaded(object sender, RoutedEventArgs e)
+        public async void Load(object? sender = null, RoutedEventArgs? e = null)
         {
             Table.ItemsSource = await _dataService.Stomaches();
         }
@@ -51,6 +51,43 @@ namespace IssaWPF6.Views
                 var item = (StomachDto)row.Item;
                 Common.RenderOGD(item);
             }
+        }
+
+        void SelectedF(int casee)
+        {
+            var selectedIndex = Table.SelectedIndex;
+            if (selectedIndex == -1) return;
+
+            var item = Table.Items.SourceCollection.Cast<StomachDto>().ToArray()[selectedIndex];
+
+            if (item == null) return;
+
+            switch (casee)
+            {
+                case 0:
+                    Common.RenderOGD(item);
+                    break;
+                case 1:
+                    {
+                        var main = new FullWindow();
+                        main.DataContext = new OGDView(id: item.Id, dataView: this);
+                        main.Show();
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void PDF_Click(object sender, RoutedEventArgs e)
+        {
+            SelectedF(0);
+        }
+
+
+        private void Edit_Click(object sender, RoutedEventArgs e)
+        {
+            SelectedF(1);
         }
     }
 }

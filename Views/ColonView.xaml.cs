@@ -33,7 +33,7 @@ namespace IssaWPF6.Views
             InitializeComponent();
         }
 
-        public ColonView(MainWindow main)
+        public ColonView(MainWindow? main = null, int? id = null,ColonDataView? colonDataView = null)
         {
             InitializeComponent();
             _dataService = new DataService();
@@ -44,10 +44,35 @@ namespace IssaWPF6.Views
 
             DateTimePicker1.SelectedDate = DateTime.UtcNow.Date;
             Main = main;
-
+            Id = id;
+            ColonDataView = colonDataView;
+            if (id > 0)
+            {
+                colon = _dataService.EditColon(id);
+                Age.Text = colon.Age;
+                AnalInspection.Text = colon.AnalInspection;
+                Assistant.Text = colon.Assistant;
+                ClinicalData.Text = colon.ClinicalData;
+                Colon.Text = colon.ColonDetails;
+                Conclusion.Text = colon.Conclusion;
+                Endoscopist.Text = colon.Endoscopist;
+                FileNo.Text = colon.FileNo;
+                PRExam.Text = colon.PRExam;
+                Gender.SelectedItem = colon.Gender;
+                Ileum.Text = colon.Ileum;
+                Name.Text = colon.Name;
+                Premedication.Text = colon.Premedication;
+                Preparation.SelectedValue = colon.Preparation;
+                Rectum.Text = colon.Rectum;
+                Scope.SelectedItem = colon.Scope;
+                DateTimePicker1.SelectedDate = colon.Date;
+                ReferredDoctor.Text = colon.ReferredDoctor;
+            }
         }
 
         public MainWindow Main { get; }
+        public int? Id { get; }
+        public ColonDataView? ColonDataView { get; }
 
         private async void SaveButton_Click(object sender, RoutedEventArgs e)
         {
@@ -70,7 +95,7 @@ namespace IssaWPF6.Views
             colon.Date = DateTimePicker1.SelectedDate?.Date ?? DateTime.UtcNow;
             colon.ReferredDoctor = ReferredDoctor.Text;
             colon = await _dataService.AddColon(colon);
-
+            ColonDataView?.Load();
             Common.RenderColon(new ColonDto(colon));
 
         }

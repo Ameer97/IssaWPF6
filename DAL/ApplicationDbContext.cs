@@ -12,7 +12,7 @@ namespace IssaWPF6.DAL
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql("Server=localhost;Port=5432;Database=ReportsV2;User Id=postgres;Password=postgres;Timeout=300;");
+            optionsBuilder.UseNpgsql("Server=localhost;Port=5432;Database=Forms22;User Id=postgres;Password=postgres;Timeout=300;");
         }
 
 

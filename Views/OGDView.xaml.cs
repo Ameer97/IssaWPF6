@@ -32,12 +32,14 @@ namespace IssaWPF6.Views
         private DialogWindow _dialog = new();
         private Stomach stomach = new();
         public MainWindow Main { get; }
+        public int? Id { get; }
+        public OGDDataView? DataView { get; }
 
         public OGDView()
         {
             InitializeComponent();
         }
-        public OGDView(MainWindow main)
+        public OGDView(MainWindow? main = null, int? id = null, OGDDataView? dataView = null)
         {
             InitializeComponent();
             _dataService = new DataService();
@@ -47,6 +49,30 @@ namespace IssaWPF6.Views
 
             Date.SelectedDate = DateTime.UtcNow.Date;
             Main = main;
+            Id = id;
+            DataView = dataView;
+
+            if(id > 0)
+            {
+                stomach = _dataService.EditStomache(id);
+                Name.Text = stomach.Name;
+                Age.Text = stomach.Age;
+                Gender.SelectedItem = stomach.Gender;
+                FileNo.Text = stomach.FileNo;
+                Date.SelectedDate = stomach.Date;
+                Premedication.Text = stomach.Premedication;
+                Scope.SelectedItem = stomach.Scope;
+                ReferredDoctor.Text = stomach.ReferredDoctor;
+                ClinicalData.Text = stomach.ClinicalData;
+                GEJ.Text = stomach.GEJ;
+                Esophagus.Text = stomach.Esophagus;
+                StomachDetails.Text = stomach.StomachDetails;
+                D1.Text = stomach.D1;
+                D2.Text = stomach.D2;
+                Conclusion.Text = stomach.Conclusion;
+                Assistant.Text = stomach.Assistant;
+                Endoscopist.Text = stomach.Endoscopist;
+            }
         }
 
 
@@ -69,6 +95,7 @@ namespace IssaWPF6.Views
             stomach.Conclusion = Conclusion.Text;
             stomach.Assistant = Assistant.Text;
             stomach.Endoscopist = Endoscopist.Text;
+            DataView?.Load();
             stomach = await _dataService.AddStomach(stomach);
 
 

@@ -20,6 +20,8 @@ namespace IssaWPF6.Service
         public Task<Stomach> AddStomach(Stomach item);
         public Task<List<StomachDto>> Stomaches();
         public Task<List<ColonDto>> Colons();
+        public Stomach EditStomache(int? id = null);
+        public Colon EditColon(int? id = null);
         public void Migrate();
 
     }
@@ -73,7 +75,8 @@ namespace IssaWPF6.Service
         {
             using (var db = new ApplicationDbContext())
             {
-                return await db.Stomaches.Select(c => new StomachDto(c)).ToListAsync();
+                return await db.Stomaches
+                    .Select(c => new StomachDto(c)).ToListAsync();
             }
         }
         
@@ -82,7 +85,28 @@ namespace IssaWPF6.Service
         {
             using (var db = new ApplicationDbContext())
             {
-                return await db.Colons.Select(c => new ColonDto(c)).ToListAsync();
+                return await db.Colons
+                    .Select(c => new ColonDto(c)).ToListAsync();
+            }
+        }
+
+
+        public Stomach EditStomache(int? id = null)
+        {
+            using (var db = new ApplicationDbContext())
+            {
+                return db.Stomaches
+                    .First(x => id == null || x.Id == id);
+            }
+        }
+
+
+        public Colon EditColon(int? id = null)
+        {
+            using (var db = new ApplicationDbContext())
+            {
+                return db.Colons
+                    .First(x => id == null || x.Id == id);
             }
         }
 
