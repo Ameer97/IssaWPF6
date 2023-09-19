@@ -18,5 +18,6 @@ namespace IssaWPF6.DAL
 
         public DbSet<Colon> Colons { get; set; }
         public DbSet<Stomach> Stomaches { get; set; }
+        public DbSet<Photo> Photos { get; set; }
     }
 }

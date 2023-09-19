@@ -3,6 +3,7 @@ using IssaWPF6.Models;
 using IssaWPF6.Service;
 using IssaWPF6.Windows;
 using Microsoft.ReportingServices.ReportProcessing.ReportObjectModel;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,6 +29,10 @@ namespace IssaWPF6.Views
         private DataService _dataService;
         private DialogWindow _dialog = new();
         private Colon colon = new Models.Colon();
+
+        private string Img1 ="";
+        private string Img2 ="";
+        private string Img3 ="";
         public ColonView()
         {
             InitializeComponent();
@@ -95,7 +100,17 @@ namespace IssaWPF6.Views
             colon.Date = DateTimePicker1.SelectedDate?.Date ?? DateTime.UtcNow;
             colon.ReferredDoctor = ReferredDoctor.Text;
             colon = await _dataService.AddColon(colon);
+
             ColonDataView?.Load();
+
+
+            if (!string.IsNullOrEmpty(Img1))
+                _dataService.SetImage(Img1, nameof(Img1), colon.TypePhoto, colon.Id);
+            if (!string.IsNullOrEmpty(Img2))
+                _dataService.SetImage(Img2, nameof(Img2), colon.TypePhoto, colon.Id);
+            if (!string.IsNullOrEmpty(Img3))
+                _dataService.SetImage(Img3, nameof(Img3), colon.TypePhoto, colon.Id);
+
             Common.RenderColon(new ColonDto(colon));
 
         }
@@ -120,6 +135,27 @@ namespace IssaWPF6.Views
         {
             Name.Focus();
 
+        }
+
+        private void Image1Button_Click(object sender, RoutedEventArgs e)
+        {
+            var openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
+                Img1 = openFileDialog.FileName;
+        }
+
+        private void Image2Button_Click(object sender, RoutedEventArgs e)
+        {
+            var openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
+                Img2 = openFileDialog.FileName;
+        }
+
+        private void Image3Button_Click(object sender, RoutedEventArgs e)
+        {
+            var openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
+                Img3 = openFileDialog.FileName;
         }
     }
 }

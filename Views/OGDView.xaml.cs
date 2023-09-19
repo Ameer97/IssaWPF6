@@ -20,6 +20,7 @@ using System.Xml.Linq;
 using IssaWPF6.Service;
 using IssaWPF6.Windows;
 using OfficeOpenXml;
+using Microsoft.Win32;
 
 namespace IssaWPF6.Views
 {
@@ -35,6 +36,10 @@ namespace IssaWPF6.Views
         public int? Id { get; }
         public OGDDataView? DataView { get; }
 
+
+        private string Img1 = "";
+        private string Img2 = "";
+        private string Img3 = "";
         public OGDView()
         {
             InitializeComponent();
@@ -99,6 +104,13 @@ namespace IssaWPF6.Views
             stomach = await _dataService.AddStomach(stomach);
 
 
+            if (!string.IsNullOrEmpty(Img1))
+                _dataService.SetImage(Img1, nameof(Img1), stomach.TypePhoto, stomach.Id);
+            if (!string.IsNullOrEmpty(Img2))
+                _dataService.SetImage(Img2, nameof(Img2), stomach.TypePhoto, stomach.Id);
+            if (!string.IsNullOrEmpty(Img3))
+                _dataService.SetImage(Img3, nameof(Img3), stomach.TypePhoto, stomach.Id);
+
             Common.RenderOGD(new StomachDto(stomach));
 
         }
@@ -122,6 +134,26 @@ namespace IssaWPF6.Views
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             Name.Focus();
+        }
+        private void Image1Button_Click(object sender, RoutedEventArgs e)
+        {
+            var openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
+                Img1 = openFileDialog.FileName;
+        }
+
+        private void Image2Button_Click(object sender, RoutedEventArgs e)
+        {
+            var openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
+                Img2 = openFileDialog.FileName;
+        }
+
+        private void Image3Button_Click(object sender, RoutedEventArgs e)
+        {
+            var openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
+                Img3 = openFileDialog.FileName;
         }
     }
 

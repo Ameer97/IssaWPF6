@@ -2,6 +2,7 @@
 using IssaWPF6.DAL;
 using IssaWPF6.Dtos;
 using IssaWPF6.Models;
+using IssaWPF6.Service;
 using Microsoft.Reporting.WinForms;
 using OfficeOpenXml;
 using System;
@@ -14,6 +15,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Documents;
+using System.Windows.Media.Imaging;
 
 namespace IssaWPF6
 {
@@ -61,7 +63,7 @@ namespace IssaWPF6
 
         public static string BinPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
 
-        public static void RenderColon(ColonDto f)
+        public static async void RenderColon(ColonDto f)
         {
 
             var parameters = new List<KeyValuDto>
@@ -85,13 +87,14 @@ namespace IssaWPF6
                 new KeyValuDto{ Key = "Date", Value = f.Date },
                 new KeyValuDto{ Key = "ReferredDoctor", Value = f.ReferredDoctor },
             };
-
+            var photos = await new DataService().GetImage(f.TypePhoto, f.Id);
+            parameters.AddRange(photos);
             RenderReport(f.Name, parameters);
         }
 
 
 
-        public static void RenderOGD(StomachDto f)
+        public static async void RenderOGD(StomachDto f)
         {
 
 
@@ -116,12 +119,15 @@ namespace IssaWPF6
                 new KeyValuDto{ Key = "Endoscopist", Value = f.Endoscopist },
             };
 
+            var photos = await new DataService().GetImage(f.TypePhoto, f.Id);
+            parameters.AddRange(photos);
             RenderReport(f.Name, parameters, isColon: false);
         }
 
         public static void RenderReport(string name, List<KeyValuDto> Parameters, bool isColon = true)
         {
             LocalReport localReport = new LocalReport();
+            localReport.EnableExternalImages = true;
             localReport.ReportPath = string.Format(@"Reports\{0}.rdlc", isColon ? "colon" : "stomach");
 
             Parameters.ForEach(p => localReport.SetParameters(new ReportParameter(p.Key, p.Value)));
@@ -328,5 +334,37 @@ namespace IssaWPF6
             }
 
         }
+
+
+    }
+
+    public static class Extensions
+    {
+
+        public static BitmapImage ToImage(this byte[]? array)
+        {
+            using (var ms = new System.IO.MemoryStream(array))
+            {
+                var image = new BitmapImage();
+                image.BeginInit();
+                image.CacheOption = BitmapCacheOption.OnLoad; // here
+                image.StreamSource = ms;
+                image.EndInit();
+                return image;
+            }
+        }
+        public static string TempPath(this byte[]? array)
+        {
+            BitmapEncoder encoder = new PngBitmapEncoder();
+            encoder.Frames.Add(BitmapFrame.Create(array.ToImage()));
+
+            var path = Path.Combine(Path.GetTempPath(), DateTime.Now.ToString("ssmmhh_ddMMyyyy") + ".jpeg");
+            using (var fileStream = new System.IO.FileStream(path, System.IO.FileMode.Create))
+            {
+                encoder.Save(fileStream);
+            }
+            return @"File:\" + path;
+        }
+
     }
 }

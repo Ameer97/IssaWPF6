@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IssaWPF6.DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,6 +28,8 @@ namespace IssaWPF6.Models
         public string? Conclusion { get; set; }
         public string? Assistant { get; set; }
         public string? Endoscopist { get; set; }
+
+        public int TypePhoto => 1;
     }
     public class Stomach
     {
@@ -48,5 +51,33 @@ namespace IssaWPF6.Models
         public string? Conclusion { get; set; }
         public string? Assistant { get; set; }
         public string? Endoscopist { get; set; }
+
+        public int TypePhoto => 0;
+
+        //public List<Photo> Photos { get; set; } = new List<Photo>();
+        //public List<Photo> GetPhotos()
+        //{
+        //    return new ApplicationDbContext().Photos.Where(x => x.TypeId == 0 && x.ObjectId == Id).ToList();
+        //}
+        //public void SetPhotos(ApplicationDbContext context, List<Photo> photos)
+        //{
+        //    photos.ForEach(x =>
+        //    {                           ///micanisim for add path to photo
+        //        x.TypeId = 0;
+        //        x.ObjectId = Id;
+        //    });
+        //    context.Photos.AddRange(photos);
+        //    context.SaveChanges();
+
+        //}
+    }
+
+    public class Photo
+    {
+        public int Id { get; set; }
+        public int ObjectId { get; set; }
+        public int TypeId { get; set; }
+        public string Name { get; set; }
+        public byte[]? Data { get; set; }
     }
 }

@@ -9,6 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Documents;
 
 namespace IssaWPF6.Service
 {
@@ -23,6 +24,10 @@ namespace IssaWPF6.Service
         public Stomach EditStomache(int? id = null);
         public Colon EditColon(int? id = null);
         public void Migrate();
+        public Photo SetImage(string photoPath, string Name, int typeId, int objectId);
+        public Task<List<KeyValuDto>> GetImage(int typeId, int objectId);
+
+
 
     }
     public class DataService : IDataService
@@ -116,6 +121,30 @@ namespace IssaWPF6.Service
             {
                 db.Database.Migrate();
 
+            }
+        }
+
+
+
+        public Photo SetImage(string photoPath, string Name, int typeId, int objectId)
+        {
+            var photo = new Photo { Data = File.ReadAllBytes(photoPath), Name = Name, TypeId = typeId, ObjectId = objectId };
+
+            using (var db = new ApplicationDbContext())
+            {
+                db.Photos.Add(photo);
+                db.SaveChanges();
+                return photo;
+            }
+        }
+
+        public async Task<List<KeyValuDto>> GetImage(int typeId, int objectId)
+        {
+            using (var db = new ApplicationDbContext())
+            {
+                return await db.Photos.Where(p => p.TypeId == typeId && p.ObjectId == objectId)
+                    .Select(x => new KeyValuDto { Key=x.Name,Value = x.Data.TempPath() })
+                    .ToListAsync();
             }
         }
     }

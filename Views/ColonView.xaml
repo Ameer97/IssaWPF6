@@ -65,10 +65,13 @@
         <Label Content="Conclusion" Width="131" FontSize="14" HorizontalAlignment="Left" Margin="624,377,0,0" VerticalAlignment="Top" Height="30"/>
         <Label Content="Endoscopist" Width="239" FontSize="14" HorizontalAlignment="Left" Margin="615,480,0,0" VerticalAlignment="Top"/>
         <Label Content="Assistant" Width="239" FontSize="14" HorizontalAlignment="Left" Margin="624,516,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="SaveButton"  Width="710" FontSize="14" Content="Save" HorizontalAlignment="Left" Margin="622,568,0,0" VerticalAlignment="Top" Height="64" Click="SaveButton_Click" Background="#8bb9f0"/>
+        <Button x:Name="SaveButton"  Width="116" FontSize="14" Content="Save" HorizontalAlignment="Left" Margin="1216,568,0,0" VerticalAlignment="Top" Height="64" Click="SaveButton_Click" Background="#8bb9f0"/>
 
 
         <Label Content="Recommendations" Width="239" FontSize="9" HorizontalAlignment="Left" Margin="624,393,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="Image1Button"  Width="116" FontSize="14" Content="Image1" HorizontalAlignment="Left" Margin="725,568,0,0" VerticalAlignment="Top" Height="64" Click="Image1Button_Click"  Background="#FFF0DE8B"/>
+        <Button x:Name="Image2Button"  Width="116" FontSize="14" Content="Image2" HorizontalAlignment="Left" Margin="846,568,0,0" VerticalAlignment="Top" Height="64" Click="Image2Button_Click"  Background="#FFF0DE8B"/>
+        <Button x:Name="Image3Button"  Width="116" FontSize="14" Content="Image3" HorizontalAlignment="Left" Margin="967,568,0,0" VerticalAlignment="Top" Height="64" Click="Image3Button_Click"  Background="#FFF0DE8B"/>
 
 
 

@@ -29,6 +29,8 @@ namespace IssaWPF6.Dtos
         public string Endoscopist { get; set; }
         public string Assistant { get; set; }
 
+
+        public int TypePhoto => 1;
         public ColonDto()
         {
             
@@ -78,6 +80,8 @@ namespace IssaWPF6.Dtos
         public string Assistant { get; set; }
         public string Endoscopist { get; set; }
 
+
+        public int TypePhoto => 0;
         public StomachDto()
         {
             
