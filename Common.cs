@@ -358,7 +358,7 @@ namespace IssaWPF6
             BitmapEncoder encoder = new PngBitmapEncoder();
             encoder.Frames.Add(BitmapFrame.Create(array.ToImage()));
 
-            var path = Path.Combine(Path.GetTempPath(), DateTime.Now.ToString("ssmmhh_ddMMyyyy") + ".jpeg");
+            var path = Path.Combine(Path.GetTempPath(), DateTime.Now.ToString("ffffssmmhh_ddMMyyyy") + ".jpeg");
             using (var fileStream = new System.IO.FileStream(path, System.IO.FileMode.Create))
             {
                 encoder.Save(fileStream);
