@@ -32,7 +32,7 @@ namespace IssaWPF6.Views
         private DataService _dataService;
         private DialogWindow _dialog = new();
         private Stomach stomach = new();
-        public MainWindow Main { get; }
+        public FullWindow Main { get; set; }
         public int? Id { get; }
         public OGDDataView? DataView { get; }
 
@@ -44,7 +44,7 @@ namespace IssaWPF6.Views
         {
             InitializeComponent();
         }
-        public OGDView(MainWindow? main = null, int? id = null, OGDDataView? dataView = null)
+        public OGDView(FullWindow? main = null, int? id = null, OGDDataView? dataView = null)
         {
             InitializeComponent();
             _dataService = new DataService();
@@ -155,6 +155,16 @@ namespace IssaWPF6.Views
             if (openFileDialog.ShowDialog() == true)
                 Img3 = openFileDialog.FileName;
         }
+
+        private void Reload_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Close();
+            Main = new FullWindow();
+            Main.DataContext = new OGDView(Main);
+            Main.Show();
+
+        }
+
     }
 
 

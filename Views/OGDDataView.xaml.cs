@@ -67,12 +67,16 @@ namespace IssaWPF6.Views
                 case 0:
                     Common.RenderOGD(item);
                     break;
+
                 case 1:
                     {
                         var main = new FullWindow();
                         main.DataContext = new OGDView(id: item.Id, dataView: this);
                         main.Show();
                     }
+                    break;
+
+                case 2:_dataService.DeleteStomach(item.Id);
                     break;
                 default:
                     break;
@@ -88,6 +92,11 @@ namespace IssaWPF6.Views
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
             SelectedF(1);
+        }
+
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

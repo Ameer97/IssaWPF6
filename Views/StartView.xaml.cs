@@ -41,16 +41,16 @@ namespace IssaWPF6.Views
 
         private void ColonButton_Click(object sender, RoutedEventArgs e)
         {
-            var main = new FullWindow();
-            main.DataContext = new ColonView(Main);
-            main.Show();
+            var window = new FullWindow();
+            window.DataContext = new ColonView(window);
+            window.Show();
         }
 
         private void OGDButton_Click(object sender, RoutedEventArgs e)
         {
-            var main = new FullWindow();
-            main.DataContext = new OGDView(Main);
-            main.Show();
+            var window = new FullWindow();
+            window.DataContext = new OGDView(window);
+            window.Show();
         }
 
         private async void ColonDataButton_Click(object sender, RoutedEventArgs e)

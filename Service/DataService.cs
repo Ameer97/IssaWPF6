@@ -44,6 +44,28 @@ namespace IssaWPF6.Service
                 return item;
             } 
         }
+        public void DeleteColon(int id)
+        {
+            using(var db = new ApplicationDbContext())
+            {
+                var item = db.Colons.FirstOrDefault(x => x.Id == id);
+                if(item == null)
+                    return;
+                db.Colons.Remove(item);
+                db.SaveChanges();
+            } 
+        }
+        public void DeleteStomach(int id)
+        {
+            using(var db = new ApplicationDbContext())
+            {
+                var item = db.Stomaches.FirstOrDefault(x => x.Id == id);
+                if (item == null)
+                    return;
+                db.Stomaches.Remove(item);
+                db.SaveChanges();
+            } 
+        }
         
         public async Task<Stomach> AddStomach(Stomach item)
         {

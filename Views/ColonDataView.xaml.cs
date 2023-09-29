@@ -76,6 +76,10 @@ namespace IssaWPF6.Views
                         main.Show();
                     }
                     break;
+
+                case 2:
+                    _dataService.DeleteColon(item.Id);
+                    break;
                 default:
                     break;
             }
@@ -86,10 +90,14 @@ namespace IssaWPF6.Views
             SelectedF(0);
         }
 
-
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
             SelectedF(1);
+        }
+
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            SelectedF(2);
         }
     }
 }

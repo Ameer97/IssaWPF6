@@ -69,9 +69,10 @@
 
 
         <Label Content="Recommendations" Width="239" FontSize="9" HorizontalAlignment="Left" Margin="624,393,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="Image1Button"  Width="116" FontSize="14" Content="Image1" HorizontalAlignment="Left" Margin="725,568,0,0" VerticalAlignment="Top" Height="64" Click="Image1Button_Click"  Background="#FFF0DE8B"/>
-        <Button x:Name="Image2Button"  Width="116" FontSize="14" Content="Image2" HorizontalAlignment="Left" Margin="846,568,0,0" VerticalAlignment="Top" Height="64" Click="Image2Button_Click"  Background="#FFF0DE8B"/>
-        <Button x:Name="Image3Button"  Width="116" FontSize="14" Content="Image3" HorizontalAlignment="Left" Margin="967,568,0,0" VerticalAlignment="Top" Height="64" Click="Image3Button_Click"  Background="#FFF0DE8B"/>
+        <Button x:Name="Image1Button"  Width="116" FontSize="14" Content="Image3" HorizontalAlignment="Left" Margin="1019,568,0,0" VerticalAlignment="Top" Height="64" Click="Image1Button_Click"  Background="#FFF0DE8B"/>
+        <Button x:Name="Image2Button"  Width="116" FontSize="14" Content="Image1" HorizontalAlignment="Left" Margin="777,568,0,0" VerticalAlignment="Top" Height="64" Click="Image2Button_Click"  Background="#FFF0DE8B"/>
+        <Button x:Name="Image3Button"  Width="116" FontSize="14" Content="Image2" HorizontalAlignment="Left" Margin="898,568,0,0" VerticalAlignment="Top" Height="64" Click="Image3Button_Click"  Background="#FFF0DE8B"/>
+        <Button x:Name="Reload"  Width="54" FontSize="14" Content="Reload" HorizontalAlignment="Left" Margin="718,569,0,0" VerticalAlignment="Top" Height="62" Click="Reload_Click"  Background="#90fff0"/>
 
 
 

@@ -38,7 +38,7 @@ namespace IssaWPF6.Views
             InitializeComponent();
         }
 
-        public ColonView(MainWindow? main = null, int? id = null,ColonDataView? colonDataView = null)
+        public ColonView(FullWindow? main = null, int? id = null,ColonDataView? colonDataView = null)
         {
             InitializeComponent();
             _dataService = new DataService();
@@ -75,7 +75,7 @@ namespace IssaWPF6.Views
             }
         }
 
-        public MainWindow Main { get; }
+        public FullWindow Main { get; }
         public int? Id { get; }
         public ColonDataView? ColonDataView { get; }
 
@@ -156,6 +156,15 @@ namespace IssaWPF6.Views
             var openFileDialog = new OpenFileDialog();
             if (openFileDialog.ShowDialog() == true)
                 Img3 = openFileDialog.FileName;
+        }
+
+        private void Reload_Click(object sender, RoutedEventArgs e)
+        {
+            var main = new FullWindow();
+            main.DataContext = new ColonView(Main);
+            main.Show();
+
+            Main.Close();
         }
     }
 }
