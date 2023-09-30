@@ -121,13 +121,17 @@ namespace IssaWPF6.Views
             {
                 try
                 {
-                    var g = FocusManager.GetFocusedElement(Application.Current.Windows[0]);
+                    var g = FocusManager.GetFocusedElement(Application.Current.Windows[2]);
                     _dialog.Close();
                     _dialog = new();
-                    _dialog.DataContext = new KeyView((TextBox)g, _dialog, Common.ColonsShoutCuts);
+                    var m = (TextBox)g;
+                    _dialog.DataContext = new KeyView(m, _dialog, Common.ColonsShoutCuts);
                     _dialog.ShowDialog();
                 }
-                catch { }
+                catch(Exception ex) 
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 

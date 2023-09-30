@@ -56,7 +56,7 @@ namespace IssaWPF6.Views
         private async void ColonDataButton_Click(object sender, RoutedEventArgs e)
         {
             var newWindow = new MainWindow();
-            newWindow.DataContext = new ColonDataView();
+            newWindow.DataContext = new ColonDataView(newWindow);
             newWindow.Show();
         }
 
@@ -85,7 +85,7 @@ namespace IssaWPF6.Views
         private void OGDDataButton_Click(object sender, RoutedEventArgs e)
         {
             var newWindow = new MainWindow();
-            newWindow.DataContext = new OGDDataView();
+            newWindow.DataContext = new OGDDataView(newWindow);
             newWindow.Show();
         }
     }

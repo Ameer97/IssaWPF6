@@ -20,7 +20,6 @@
                     <DataTemplate>
                         <StackPanel>
                             <Button
-                                x:Name="Button"
                                 Content="{Binding}"
                                 Click="Button_Click"
                                 Tag="{Binding}"

@@ -21,6 +21,7 @@ using IssaWPF6.Service;
 using IssaWPF6.Windows;
 using OfficeOpenXml;
 using Microsoft.Win32;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace IssaWPF6.Views
 {
@@ -121,13 +122,17 @@ namespace IssaWPF6.Views
             {
                 try
                 {
-                    var g = FocusManager.GetFocusedElement(Application.Current.Windows[0]);
+                    var g = FocusManager.GetFocusedElement(Application.Current.Windows[2]);
+                    _dialog = new DialogWindow();
                     _dialog.Close();
                     _dialog = new();
                     _dialog.DataContext = new KeyView((TextBox)g, _dialog, Common.StomacheShoutCuts);
                     _dialog.ShowDialog();
                 }
-                catch { }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 

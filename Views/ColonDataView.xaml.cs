@@ -27,7 +27,9 @@ namespace IssaWPF6.Views
     {
         private DataService _dataService;
 
-        public ColonDataView()
+        public MainWindow Main { get; set; }
+
+        public ColonDataView(MainWindow newWindow)
         {
             InitializeComponent();
             _dataService = new DataService();
@@ -36,6 +38,7 @@ namespace IssaWPF6.Views
             rowStyle.Setters.Add(new EventSetter(DataGridRow.MouseDoubleClickEvent,
                                      new MouseButtonEventHandler(Table_MouseDoubleClick)));
             Table.RowStyle = rowStyle;
+            Main = newWindow;
         }
 
         public async void Load(object? sender = null, RoutedEventArgs? e = null)
@@ -78,7 +81,13 @@ namespace IssaWPF6.Views
                     break;
 
                 case 2:
+                    {
                     _dataService.DeleteColon(item.Id);
+                        Main.Close();
+                        Main = new();
+                        Main.DataContext = new ColonDataView(Main);
+                        Main.Show();
+                    }
                     break;
                 default:
                     break;

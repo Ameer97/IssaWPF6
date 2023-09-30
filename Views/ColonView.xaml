@@ -16,35 +16,35 @@
              Loaded="UserControl_Loaded"
              >
     <Grid>
-        <TextBox x:Name="Name" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="480" FontSize="12" Margin="126,37,0,0"/>
-        <TextBox x:Name="Age" HorizontalAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True" Text="" VerticalAlignment="Top" Width="480" FontSize="12" Margin="126,90,0,0" />
+        <TextBox x:Name="Name" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="480"  FontSize="20" Margin="126,37,0,0"/>
+        <TextBox x:Name="Age" HorizontalAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True" Text="" VerticalAlignment="Top" Width="480"  FontSize="20" Margin="126,90,0,0" />
 
-        <!--<TextBox x:Name="Gender" HorizontalAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True" Text="" VerticalAlignment="Top" Width="440" FontSize="12" Margin="161,195,0,0"/>-->
+        <!--<TextBox x:Name="Gender" HorizontalAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True" Text="" VerticalAlignment="Top" Width="440"  FontSize="20" Margin="161,195,0,0"/>-->
 
-        <ComboBox x:Name="Gender" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Width="480" FontSize="12" Margin="126,143,0,0" />
-        <TextBox x:Name="FileNo" HorizontalAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True" Text="" VerticalAlignment="Top" Width="480" FontSize="12" Margin="126,208,0,0" />
-
-
-        <DatePicker x:Name="DateTimePicker1" HorizontalAlignment="Left"  Text="" VerticalAlignment="Top" Width="480" FontSize="12" Margin="126,268,0,0" SelectedDate="{x:Static sys:DateTime.Now}" />
+        <ComboBox x:Name="Gender" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Width="480"  FontSize="20" Margin="126,143,0,0" />
+        <TextBox x:Name="FileNo" HorizontalAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True" Text="" VerticalAlignment="Top" Width="480"  FontSize="20" Margin="126,208,0,0" />
 
 
-        <TextBox x:Name="Premedication" HorizontalAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True" Text="" VerticalAlignment="Top" Width="480" FontSize="12" Margin="126,323,0,0"/>
+        <DatePicker x:Name="DateTimePicker1" HorizontalAlignment="Left"  Text="" VerticalAlignment="Top" Width="480"  FontSize="20" Margin="126,268,0,0" SelectedDate="{x:Static sys:DateTime.Now}" />
 
-        <ComboBox x:Name="Scope" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Width="480" FontSize="12" Margin="126,393,0,0" />
 
-        <TextBox x:Name="ReferredDoctor" HorizontalAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True" Text="" VerticalAlignment="Top" Width="480" FontSize="12" Margin="126,459,0,0"/>
-        <TextBox x:Name="ClinicalData" HorizontalAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True" Text="" VerticalAlignment="Top" Width="480" FontSize="12" Margin="126,524,0,0"/>
+        <TextBox x:Name="Premedication" HorizontalAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True" Text="" VerticalAlignment="Top" Width="480"  FontSize="20" Margin="126,323,0,0"/>
 
-        <ComboBox x:Name="Preparation" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Width="480" FontSize="12" Margin="126,585,0,0" />
+        <ComboBox x:Name="Scope" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Width="480"  FontSize="20" Margin="126,393,0,0" />
 
-        <TextBox x:Name="AnalInspection" HorizontalAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True" Text="" VerticalAlignment="Top" Width="576" FontSize="12" Margin="756,40,0,0"/>
-        <TextBox x:Name="PRExam" HorizontalAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True" Text="" VerticalAlignment="Top" Width="614" FontSize="12" Margin="718,106,0,0"/>
-        <TextBox x:Name="Ileum" HorizontalAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True" Text="" VerticalAlignment="Top" Width="614" FontSize="12" Margin="718,184,0,0"/>
-        <TextBox x:Name="Colon" HorizontalAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True" Text="" VerticalAlignment="Top" Width="614" FontSize="12" Margin="718,243,0,0"/>
-        <TextBox x:Name="Rectum" HorizontalAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True" Text="" VerticalAlignment="Top" Width="614" FontSize="12" Margin="718,337,0,0"/>
-        <TextBox x:Name="Conclusion" HorizontalAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True" Text="" VerticalAlignment="Top" Width="614" FontSize="12" Margin="718,383,0,0"/>
-        <TextBox x:Name="Endoscopist" HorizontalAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True" Text="" VerticalAlignment="Top" Width="614" FontSize="12" Margin="718,486,0,0"/>
-        <TextBox x:Name="Assistant" HorizontalAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True" Text="" VerticalAlignment="Top" Width="614" FontSize="12" Margin="718,526,0,0"/>
+        <TextBox x:Name="ReferredDoctor" HorizontalAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True" Text="" VerticalAlignment="Top" Width="480"  FontSize="20" Margin="126,459,0,0"/>
+        <TextBox x:Name="ClinicalData" HorizontalAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True" Text="" VerticalAlignment="Top" Width="480"  FontSize="20" Margin="126,524,0,0"/>
+
+        <ComboBox x:Name="Preparation" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Width="480"  FontSize="20" Margin="126,585,0,0" />
+
+        <TextBox x:Name="AnalInspection" HorizontalAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True" Text="" VerticalAlignment="Top" Width="614"  FontSize="20" Margin="718,40,0,0"/>
+        <TextBox x:Name="PRExam" HorizontalAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True" Text="" VerticalAlignment="Top" Width="614"  FontSize="20" Margin="718,106,0,0"/>
+        <TextBox x:Name="Ileum" HorizontalAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True" Text="" VerticalAlignment="Top" Width="614"  FontSize="20" Margin="718,184,0,0"/>
+        <TextBox x:Name="Colon" HorizontalAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True" Text="" VerticalAlignment="Top" Width="614"  FontSize="20" Margin="718,243,0,0"/>
+        <TextBox x:Name="Rectum" HorizontalAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True" Text="" VerticalAlignment="Top" Width="614"  FontSize="20" Margin="718,337,0,0"/>
+        <TextBox x:Name="Conclusion" HorizontalAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True" Text="" VerticalAlignment="Top" Width="614"  FontSize="20" Margin="718,383,0,0"/>
+        <TextBox x:Name="Endoscopist" HorizontalAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True" Text="" VerticalAlignment="Top" Width="614"  FontSize="20" Margin="718,486,0,0"/>
+        <TextBox x:Name="Assistant" HorizontalAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True" Text="" VerticalAlignment="Top" Width="614"  FontSize="20" Margin="718,526,0,0"/>
 
 
         <Label Content="Name" Width="151" FontSize="14" HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top"/>
@@ -57,7 +57,7 @@
         <Label Content="ReferredDoctor" Width="151" FontSize="14" HorizontalAlignment="Left" Margin="10,456,0,0" VerticalAlignment="Top"/>
         <Label Content="ClinicalData" Width="151" FontSize="14" HorizontalAlignment="Left" Margin="10,520,0,0" VerticalAlignment="Top"/>
         <Label Content="Preparation" Width="151" FontSize="14" HorizontalAlignment="Left" Margin="10,583,0,0" VerticalAlignment="Top"/>
-        <Label Content="AnalInspection" Width="239" FontSize="14" HorizontalAlignment="Left" Margin="624,34,0,0" VerticalAlignment="Top"/>
+        <Label Content="AnalInspection" Width="239" FontSize="12" HorizontalAlignment="Left" Margin="624,40,0,0" VerticalAlignment="Top"/>
         <Label Content="PRExam" Width="239" FontSize="14" HorizontalAlignment="Left" Margin="624,102,0,0" VerticalAlignment="Top"/>
         <Label Content="Ileum" Width="239" FontSize="14" HorizontalAlignment="Left" Margin="624,178,0,0" VerticalAlignment="Top"/>
         <Label Content="Colon" Width="239" FontSize="14" HorizontalAlignment="Left" Margin="624,238,0,0" VerticalAlignment="Top"/>
@@ -65,14 +65,14 @@
         <Label Content="Conclusion" Width="131" FontSize="14" HorizontalAlignment="Left" Margin="624,377,0,0" VerticalAlignment="Top" Height="30"/>
         <Label Content="Endoscopist" Width="239" FontSize="14" HorizontalAlignment="Left" Margin="615,480,0,0" VerticalAlignment="Top"/>
         <Label Content="Assistant" Width="239" FontSize="14" HorizontalAlignment="Left" Margin="624,516,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="SaveButton"  Width="116" FontSize="14" Content="Save" HorizontalAlignment="Left" Margin="1216,568,0,0" VerticalAlignment="Top" Height="64" Click="SaveButton_Click" Background="#8bb9f0"/>
+        <Button x:Name="SaveButton"  Width="116" FontSize="14" Content="Print" HorizontalAlignment="Left" Margin="1092,568,0,0" VerticalAlignment="Top" Height="64" Click="SaveButton_Click" Background="#90fff0"/>
 
 
         <Label Content="Recommendations" Width="239" FontSize="9" HorizontalAlignment="Left" Margin="624,393,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="Image1Button"  Width="116" FontSize="14" Content="Image3" HorizontalAlignment="Left" Margin="1019,568,0,0" VerticalAlignment="Top" Height="64" Click="Image1Button_Click"  Background="#FFF0DE8B"/>
-        <Button x:Name="Image2Button"  Width="116" FontSize="14" Content="Image1" HorizontalAlignment="Left" Margin="777,568,0,0" VerticalAlignment="Top" Height="64" Click="Image2Button_Click"  Background="#FFF0DE8B"/>
-        <Button x:Name="Image3Button"  Width="116" FontSize="14" Content="Image2" HorizontalAlignment="Left" Margin="898,568,0,0" VerticalAlignment="Top" Height="64" Click="Image3Button_Click"  Background="#FFF0DE8B"/>
-        <Button x:Name="Reload"  Width="54" FontSize="14" Content="Reload" HorizontalAlignment="Left" Margin="718,569,0,0" VerticalAlignment="Top" Height="62" Click="Reload_Click"  Background="#90fff0"/>
+        <Button x:Name="Image1Button"  Width="116" FontSize="14" Content="Image3" HorizontalAlignment="Left" Margin="965,568,0,0" VerticalAlignment="Top" Height="64" Click="Image1Button_Click"  Background="#FFF0DE8B"/>
+        <Button x:Name="Image2Button"  Width="116" FontSize="14" Content="Image1" HorizontalAlignment="Left" Margin="723,568,0,0" VerticalAlignment="Top" Height="64" Click="Image2Button_Click"  Background="#FFF0DE8B"/>
+        <Button x:Name="Image3Button"  Width="116" FontSize="14" Content="Image2" HorizontalAlignment="Left" Margin="844,568,0,0" VerticalAlignment="Top" Height="64" Click="Image3Button_Click"  Background="#FFF0DE8B"/>
+        <Button x:Name="Reload"  Width="111" FontSize="14" Content="Reload" HorizontalAlignment="Left" Margin="1221,570,0,0" VerticalAlignment="Top" Height="62" Click="Reload_Click"  Background="#8bb9f0"/>
 
 
 

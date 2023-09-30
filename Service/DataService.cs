@@ -26,7 +26,8 @@ namespace IssaWPF6.Service
         public void Migrate();
         public Photo SetImage(string photoPath, string Name, int typeId, int objectId);
         public Task<List<KeyValuDto>> GetImage(int typeId, int objectId);
-
+        public void DeleteColon(int id);
+        public void DeleteStomach(int id);
 
 
     }

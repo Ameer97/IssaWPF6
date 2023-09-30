@@ -22,8 +22,8 @@ namespace IssaWPF6.Views
     public partial class KeyView : UserControl
     {
 
-        private TextBox _selectedTextBox;
-        private readonly DialogWindow dialog;
+        private TextBox _selectedTextBox = new TextBox();
+        private readonly DialogWindow dialog = new DialogWindow();
         
 
 
@@ -43,10 +43,18 @@ namespace IssaWPF6.Views
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var button = sender as Button;
-            _selectedTextBox.Text += (string)button.Tag;
-            _selectedTextBox.Select(_selectedTextBox.Text.Length, 0);
-            dialog.Close();
+            try
+            {
+                var button = sender as Button;
+                var g = (string)button.Tag;
+                _selectedTextBox.Text += g;
+                _selectedTextBox.Select(_selectedTextBox.Text.Length, 0);
+                dialog.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("1");
+            }
             
         }
     }

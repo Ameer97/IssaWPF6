@@ -26,7 +26,9 @@ namespace IssaWPF6.Views
     {
         private DataService _dataService;
 
-        public OGDDataView()
+        public MainWindow Main { get; set; }
+
+        public OGDDataView(MainWindow newWindow)
         {
             InitializeComponent();
             _dataService = new DataService();
@@ -35,6 +37,7 @@ namespace IssaWPF6.Views
             rowStyle.Setters.Add(new EventSetter(DataGridRow.MouseDoubleClickEvent,
                                      new MouseButtonEventHandler(Table_MouseDoubleClick)));
             Table.RowStyle = rowStyle;
+            Main = newWindow;
         }
 
         public async void Load(object? sender = null, RoutedEventArgs? e = null)
@@ -76,7 +79,14 @@ namespace IssaWPF6.Views
                     }
                     break;
 
-                case 2:_dataService.DeleteStomach(item.Id);
+                case 2:
+                    {
+                    _dataService.DeleteStomach(item.Id);
+                        Main.Close();
+                        Main = new();
+                        Main.DataContext = new OGDDataView(Main);
+                        Main.Show();
+                    }
                     break;
                 default:
                     break;
@@ -96,7 +106,7 @@ namespace IssaWPF6.Views
 
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
-
+            SelectedF(2);
         }
     }
 }
