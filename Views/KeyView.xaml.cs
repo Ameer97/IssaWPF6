@@ -22,7 +22,7 @@ namespace IssaWPF6.Views
     public partial class KeyView : UserControl
     {
 
-        private TextBox _selectedTextBox = new TextBox();
+        private Action<string> ChangeTextAction;
         private readonly DialogWindow dialog = new DialogWindow();
         
 
@@ -32,10 +32,10 @@ namespace IssaWPF6.Views
             InitializeComponent();
         }
 
-        public KeyView(TextBox colonForm, DialogWindow dialog, List<string> shortcuts)
+        public KeyView(Action<string> action, DialogWindow dialog, List<string> shortcuts)
         {
             InitializeComponent();
-            _selectedTextBox = colonForm;
+            ChangeTextAction = action;
             this.dialog = dialog;
             ListView.ItemsSource = shortcuts;
         }
@@ -47,8 +47,7 @@ namespace IssaWPF6.Views
             {
                 var button = sender as Button;
                 var g = (string)button.Tag;
-                _selectedTextBox.Text += g;
-                _selectedTextBox.Select(_selectedTextBox.Text.Length, 0);
+                ChangeTextAction?.Invoke(g);
                 dialog.Close();
             }
             catch (Exception)

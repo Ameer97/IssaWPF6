@@ -122,11 +122,13 @@ namespace IssaWPF6.Views
             {
                 try
                 {
-                    var g = FocusManager.GetFocusedElement(Application.Current.Windows[2]);
-                    _dialog = new DialogWindow();
+                    var g = (TextBox)FocusManager.GetFocusedElement(Main);
+                    if (g == null)
+                        return;
+
                     _dialog.Close();
                     _dialog = new();
-                    _dialog.DataContext = new KeyView((TextBox)g, _dialog, Common.StomacheShoutCuts);
+                    _dialog.DataContext = new KeyView(ChangeText, _dialog, Common.StomacheShoutCuts);
                     _dialog.ShowDialog();
                 }
                 catch (Exception ex)
@@ -134,6 +136,13 @@ namespace IssaWPF6.Views
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
+        public void ChangeText(string value)
+        {
+            var MyTextBox = (TextBox)FocusManager.GetFocusedElement(Main);
+            MyTextBox.Text += value;
+            MyTextBox.Select(MyTextBox.Text.Length, 0);
+
         }
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
